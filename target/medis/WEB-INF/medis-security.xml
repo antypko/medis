@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans:beans xmlns="http://www.springframework.org/schema/security"
+	xmlns:beans="http://www.springframework.org/schema/beans" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+	http://www.springframework.org/schema/security
+	http://www.springframework.org/schema/security/spring-security-3.1.xsd">
+
+
+	<http auto-config="true" access-denied-page="/error403.jsp">
+		
+		<intercept-url pattern="/" access="ROLE_USER, ROLE_ADMIN" />
+		<intercept-url pattern="/home" access="ROLE_USER, ROLE_ADMIN" />
+		
+		<intercept-url pattern="/login*" access="ROLE_ANONYMOUS" />
+		
+		<form-login 
+			login-page="/login.jsp"	
+			default-target-url="/home"
+			authentication-failure-url="/login.jsp?login_error=true" 
+			always-use-default-target="false" 
+			/>
+		<anonymous username="guest" granted-authority="ROLE_ANONYMOUS"/>
+	</http>
+
+	<authentication-manager>
+		<authentication-provider>
+	    	<user-service>
+	    		<user name="admin" password="111" authorities="ROLE_USER, ROLE_ADMIN" />
+	        	<user name="jimi" password="111" authorities="ROLE_USER" />
+	        	<user name="bob" password="111" authorities="ROLE_USER" />
+	      	</user-service>
+	    </authentication-provider>
+	</authentication-manager>
+
+</beans:beans>
