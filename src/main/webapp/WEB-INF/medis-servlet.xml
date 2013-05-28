@@ -27,6 +27,8 @@
 	
 	<context:component-scan base-package="com.chetyrkin.medis"/>
 	
+	<tx:annotation-driven />
+	
 	<bean id="jspViewResolver"
         class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="viewClass"
@@ -45,40 +47,7 @@
 		</property>
 	</bean> -->
     
-    <bean id="sessionFactory"
-		class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean">
-		<property name="dataSource" ref="dataSource" />
-		<property name="configLocation">
-			<value>classpath:/hibernate.cfg.xml</value>
-		</property>
-		<property name="configurationClass" value="org.hibernate.cfg.AnnotationConfiguration" />
-		<property name="hibernateProperties" ref="hibernatePropertiesConfigurer" />
-	</bean>
-	
-	<util:properties id="hibernatePropertiesConfigurer"
-		location="classpath:/hibernate.properties" />
-	
-	<tx:annotation-driven />
-	
-    <bean id="transactionManager"
-        class="org.springframework.orm.hibernate3.HibernateTransactionManager">
-        <property name="sessionFactory" ref="sessionFactory" />
-    </bean>
-	
-	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">
-		<property name="driverClassName" value="${database.driverClass}" />
-		<property name="url" value="${database.url}" />
-		<property name="username" value="${database.username}" />
-		<property name="password" value="${database.password}" />
-	</bean>
-
-	<bean id="propertyConfigurer"
-		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
-		<property name="locations">
-			<list>
-				<value>classpath:/database.properties</value>
-			</list>
-		</property>
-	</bean>
+    
+    
     
 </beans>
