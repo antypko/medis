@@ -9,6 +9,9 @@
 
 
 	<http pattern="/login*" security="none" />
+	<http security="none" pattern="/css/**" />
+	<http security="none" pattern="/images/**" />
+	<http security="none" pattern="/js/**" />
 	
 	<http auto-config="true" access-denied-page="/error403.jsp">
 		<intercept-url pattern="/**" access="ROLE_USER, ROLE_ADMIN" />
