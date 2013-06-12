@@ -12,13 +12,6 @@ import com.chetyrkin.medis.service.PatientService;
 @Controller
 public class HomeController {
 	
-	private PatientService patientService;
-	
-	@Autowired
-	public HomeController(PatientService patientService) {
-		this.patientService = patientService;
-	}
-	
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String redirectHomePage(Map<String, Object> model) {
 		return "redirect:/home";
@@ -26,7 +19,6 @@ public class HomeController {
 	
 	@RequestMapping(value = "home", method = RequestMethod.GET)
 	public String showHomePage(Map<String, Object> model) {
-		model.put("patients", patientService.getAll());
 		return "/home";
 	}
 	

@@ -10,14 +10,13 @@ import org.springframework.transaction.annotation.Transactional;
 import com.chetyrkin.medis.dao.AbstractDAO;
 import com.chetyrkin.medis.service.AbstractService;
 
-@Service("abstractService")
+
 @Transactional(readOnly = true)
 public class AbstractServiceImpl<E, I extends Serializable> implements
 		AbstractService<E, I> {
 
 	private AbstractDAO<E, I> abstractDAO;
 
-	@Autowired
 	protected AbstractServiceImpl(AbstractDAO<E, I> abstractDAO) {
 		this.abstractDAO = abstractDAO;
 	}

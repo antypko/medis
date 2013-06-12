@@ -8,23 +8,11 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Medis</title>
 </head>
 <body>
-	<h3>Contacts</h3>
-	<c:if test="${!empty patients}">
-		<table class="data">
-			<tr>
-				<th>Id</th>
-				<th>Name</th>
-			</tr>
-			<c:forEach items="${patients}" var="patient">
-				<tr>
-					<td>${patient.id}</td>
-					<td>${patient.name}</td>
-				</tr>
-			</c:forEach>
-		</table>
-	</c:if>
+	<h1>Welcome To Medis</h1>
+	<a href="${pageContext.request.contextPath}/patients/">Patients</a>
+	
 </body>
 </html>
