@@ -30,32 +30,40 @@
 	</tbody>
 </table>
 
-<%-- <c:if test="${!empty patients}">
-		<table class="data">
-			<tr>
-				<th>Id</th>
-				<th>Name</th>
-			</tr>
-			<c:forEach items="${patients}" var="patient">
-				<tr>
-					<td>${patient.id}</td>
-					<td>${patient.name}</td>
-				</tr>
-			</c:forEach>
-		</table>
-	</c:if> --%>
+<h2>Submit new Patient</h2>
+    <form id="new_patient_form">
+		<label for="name_input">Name: </label>
+		<input type="text" name="name" id="name_input" />
+		<label for="surname_input">Surname: </label>
+		<input type="text" name="surname" id="surname_input" />
+		<label for="fathersName_input">Fathers name: </label>
+		<input type="text" name="fathersName" id="fatherName_input" />
+		<input type="radio" name="sex" value="true" checked="checked" id="male"/>
+		<label for="male">Male</label>
+		<input type="radio" name="sex" value="false" id="female"/>
+		<label for="female">Female</label>
+      	<input type="submit" value="Save Patient" />
+      	<div id="patientFormResponse" class="green"></div>
+    </form>
+
 <a href="${pageContext.request.contextPath}/home/">Back</a>
 </body>
 <script> 
 	$("#get_Patients").click(showPatients);
-			
+	
+	
+	$("#new_patient_form").submit(function(e) {
+		$.post("${pageContext.request.contextPath}/patients/newPatient", $(this).serialize(), 
+				function(response) { $("#patientFormResponse").text(response); });
+		e.preventDefault();			
+		});
+	
+
 	/*		function(){
 		console.log(document.location);
 		$.get("getPatients", function(data) {
 			console.log(data);
 		});
 	});*/
-
-
 </script>
 </html>

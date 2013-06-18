@@ -37,5 +37,12 @@ public class PatientController {
 		return patientService.getAll();
 	}
 	
+	@RequestMapping(value = "/newPatient", method = RequestMethod.POST)
+	@ResponseBody
+	public String registerNewPatient(final Patient patient) {
+		patientService.saveOrUpdate(patient);
+		return "Saved patient: " + patient.getName();
+	}
+	
 
 }
