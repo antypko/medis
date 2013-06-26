@@ -14,6 +14,10 @@
 <h1>Patients page</h1>
 
 <button id="get_Patients" type="submit" name="Get patients" value="Get patients">Get Patients</button>
+
+<label for="name_search_input">Search patient with name: </label>
+<input type="text" name="name_search_input" id="name_search_input" />
+
 <table id ="patients_table">
 	<thead>
 		<tr>
@@ -51,19 +55,9 @@
 <script> 
 	$("#get_Patients").click(showPatients);
 	
+	$("#new_patient_form").submit(addNewPatient);
 	
-	$("#new_patient_form").submit(function(e) {
-		$.post("${pageContext.request.contextPath}/patients/newPatient", $(this).serialize(), 
-				function(response) { $("#patientFormResponse").text(response); });
-		e.preventDefault();			
-		});
+	$("#name_search_input").keyup(searchByName);
 	
-
-	/*		function(){
-		console.log(document.location);
-		$.get("getPatients", function(data) {
-			console.log(data);
-		});
-	});*/
 </script>
 </html>
