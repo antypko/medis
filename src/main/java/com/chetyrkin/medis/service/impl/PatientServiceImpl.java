@@ -1,27 +1,50 @@
 package com.chetyrkin.medis.service.impl;
 
+import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.chetyrkin.medis.dao.PatientDAO;
 import com.chetyrkin.medis.domain.Patient;
+import com.chetyrkin.medis.dto.PatientDTO;
 import com.chetyrkin.medis.service.PatientService;
+import com.chetyrkin.medis.transformer.PatientTransformer;
 
 @Service("patientService") 
-public class PatientServiceImpl extends AbstractServiceImpl<Patient, Long> implements PatientService {
+@Transactional(readOnly = true)
+public class PatientServiceImpl implements PatientService {
 	
 	private PatientDAO patientDAO;
 	
 	@Autowired
+	private PatientTransformer patientTransformer;
+	
+	@Autowired
 	protected PatientServiceImpl(PatientDAO patientDAO) {
-		super(patientDAO);
 		this.patientDAO = patientDAO;
 	}
 
-	public Set<Patient> searchByName(String name) {
-		return patientDAO.searchByName(name);
+	@Override
+	public Set<PatientDTO> searchByName(String name) {
+		return patientTransformer.toDTO(patientDAO.searchByName(name));
 	}
+
+	@Override
+	public Set<PatientDTO> getAll() {
+		return patientTransformer.toDTO(patientDAO.getAll());
+	}
+
+	@Override
+	@Transactional(readOnly = false)
+	public void saveOrUpdate(Patient patient) {
+		patientDAO.saveOrUpdate(patient);
+	}
+	
+	
+	
 
 }

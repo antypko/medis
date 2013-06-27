@@ -1,7 +1,6 @@
 package com.chetyrkin.medis.web;
 
 import java.util.List;
-import java.util.Map;
 import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.chetyrkin.medis.domain.Patient;
+import com.chetyrkin.medis.dto.PatientDTO;
 import com.chetyrkin.medis.service.PatientService;
 
 @Controller
@@ -32,20 +32,18 @@ public class PatientController {
 
 	@RequestMapping(value = "/getPatients", method = RequestMethod.GET)
 	@ResponseBody
-	public List<Patient> getPatientsList() {
+	public Set<PatientDTO> getPatientsList() {
 		return patientService.getAll();
 	}
 
 	@RequestMapping(value = "/newPatient", method = RequestMethod.POST)
-	@ResponseBody
-	public String registerNewPatient(final Patient patient) {
+	public @ResponseBody Patient registerNewPatient(final Patient patient) {
 		patientService.saveOrUpdate(patient);
-		return "Saved patient: " + patient.getName();
+		return patient;
 	}
 
 	@RequestMapping(value = "/searchByName/{name}", method = RequestMethod.GET)
-	@ResponseBody
-	public Set<Patient> searchByName(@PathVariable final String name) {
+	public @ResponseBody Set<PatientDTO> searchByName(@PathVariable final String name) {
 		return patientService.searchByName(name);
 	}
 

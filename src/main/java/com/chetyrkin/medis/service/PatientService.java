@@ -3,9 +3,11 @@ package com.chetyrkin.medis.service;
 import java.util.Set;
 
 import com.chetyrkin.medis.domain.Patient;
+import com.chetyrkin.medis.dto.PatientDTO;
 
-public interface PatientService extends AbstractService<Patient, Long> {
+public interface PatientService {
 	
-	public Set<Patient> searchByName(String name);
-	
+	public Set<PatientDTO> searchByName(String name);
+	Set<PatientDTO> getAll();
+	void saveOrUpdate(Patient patient);
 }

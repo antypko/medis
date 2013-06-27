@@ -17,7 +17,7 @@ function searchByName() {
 
 function addNewPatient(e) {
 	$.post("newPatient", $(this).serialize(), 
-			function(response) { $("#patientFormResponse").text(response); });
+			function(response) { /*$("#patientFormResponse").text(response); */});
 	e.preventDefault();	
 };
 

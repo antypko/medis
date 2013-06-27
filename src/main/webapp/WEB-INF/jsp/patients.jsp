@@ -47,9 +47,9 @@
 		<input type="radio" name="sex" value="false" id="female"/>
 		<label for="female">Female</label>
       	<input type="submit" value="Save Patient" />
-      	<div id="patientFormResponse" class="green"></div>
+      	
     </form>
-
+<div id="patientFormResponse">${newPatient.name}</div>
 <a href="${pageContext.request.contextPath}/home/">Back</a>
 </body>
 <script> 
