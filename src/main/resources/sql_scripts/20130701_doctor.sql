@@ -1,0 +1,9 @@
+CREATE TABLE medis.doctor (
+	id BIGINT UNSIGNED NOT NULL UNIQUE AUTO_INCREMENT,
+	name VARCHAR(20) NOT NULL,
+    surname VARCHAR(20) NOT NULL,
+    fathersName VARCHAR(20) NULL,
+	profession VARCHAR(20) NULL,
+	assignment VARCHAR(20) NULL,
+	department VARCHAR(20) NULL
+)ENGINE=INNODB CHARACTER SET utf8 COLLATE utf8_general_ci;

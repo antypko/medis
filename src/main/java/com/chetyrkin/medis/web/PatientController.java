@@ -31,7 +31,7 @@ public class PatientController {
 		return "patients";
 	}
 
-	@RequestMapping(value = "/getPatients", method = RequestMethod.GET)
+	@RequestMapping(value = "/getPatients", method = RequestMethod.GET) 
 	@ResponseBody
 	public Set<PatientDTO> getPatientsList() {
 		return patientService.getAll();
@@ -40,7 +40,6 @@ public class PatientController {
 	@RequestMapping(value = "/newPatient", method = RequestMethod.POST)
 	public @ResponseBody
 	Patient registerNewPatient(final Patient patient) {
-		System.out.println(patient);
 		patientService.saveOrUpdate(patient);
 		return patient;
 	}
