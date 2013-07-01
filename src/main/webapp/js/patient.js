@@ -9,7 +9,8 @@ function searchByName() {
 	if (name.length < 3) {
 		return true;
 	} else {
-		$.get("searchByName/" + name, function(data) {
+		
+		$.get("searchByName/", {'name' : name}, function(data) {
 			fillTable(data);
 		});
 	}
