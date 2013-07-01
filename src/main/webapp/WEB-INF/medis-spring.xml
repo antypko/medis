@@ -32,6 +32,7 @@
 		</property>
 		<property name="configurationClass" value="org.hibernate.cfg.AnnotationConfiguration" />
 		<property name="hibernateProperties" ref="hibernatePropertiesConfigurer" />
+		<property name="packagesToScan" value="com.chetyrkin.medis.domain" />
 	</bean>
 	
 	<util:properties id="hibernatePropertiesConfigurer"
