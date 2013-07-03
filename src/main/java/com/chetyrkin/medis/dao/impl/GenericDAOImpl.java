@@ -9,14 +9,14 @@ import org.hibernate.SessionFactory;
 import org.hibernate.criterion.Criterion;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import com.chetyrkin.medis.dao.AbstractDAO;
+import com.chetyrkin.medis.dao.GenericDAO;
 
 
-public class AbstractDAOImpl<E, I extends Serializable> implements AbstractDAO<E,I> {
+public class GenericDAOImpl<E, I extends Serializable> implements GenericDAO<E,I> {
 
 	private Class<E> entityClass;
 	 
-    protected AbstractDAOImpl(Class<E> entityClass) {
+    protected GenericDAOImpl(Class<E> entityClass) {
         this.entityClass = entityClass;
     }
  

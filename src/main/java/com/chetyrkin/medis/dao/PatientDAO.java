@@ -4,7 +4,7 @@ import java.util.Set;
 
 import com.chetyrkin.medis.domain.Patient;
 
-public interface PatientDAO extends AbstractDAO<Patient, Long> {
+public interface PatientDAO extends GenericDAO<Patient, Long> {
 
 	public Set<Patient> searchByName(String name);
 }

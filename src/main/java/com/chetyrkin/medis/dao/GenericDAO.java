@@ -5,7 +5,7 @@ import java.util.List;
 
 import org.hibernate.criterion.Criterion;
 
-public interface AbstractDAO<E, I extends Serializable> {
+public interface GenericDAO<E, I extends Serializable> {
 	
 	E findById(I id);
 	
