@@ -8,6 +8,7 @@ CREATE TABLE medis.event (
 	hospitalization_diagnosis VARCHAR(50) NULL,
 	facility_diagnosis VARCHAR(50) NULL,
 	clinical_diagnosis VARCHAR(50) NULL,
+	FOREIGN KEY (patient_id) REFERENCES patient(id),
 	PRIMARY KEY (id)
 )ENGINE=INNODB CHARACTER SET utf8 COLLATE utf8_general_ci;
 
