@@ -15,16 +15,16 @@
 
 <h2>Submit new Patient</h2>
     <form id="new_patient_form">
-		<label for="name_input">Name: </label>
+		<label for="name_input">Ім'я: </label>
 		<input type="text" name="name" id="name_input" />
-		<label for="surname_input">Surname: </label>
+		<label for="surname_input">Прізвище: </label>
 		<input type="text" name="surname" id="surname_input" />
-		<label for="fathersName_input">Fathers name: </label>
+		<label for="fathersName_input">По-батькові: </label>
 		<input type="text" name="fathersName" id="fatherName_input" />
 		<input type="radio" name="sex" value="true" checked="checked" id="male"/>
-		<label for="male">Male</label>
+		<label for="male">М</label>
 		<input type="radio" name="sex" value="false" id="female"/>
-		<label for="female">Female</label>
+		<label for="female">Ж</label>
       	<input type="submit" value="Save Patient" />
       	
     </form>

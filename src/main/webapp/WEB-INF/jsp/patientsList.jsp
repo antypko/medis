@@ -34,10 +34,6 @@
 	<tbody>
 	</tbody>
 </table>
-
-
-<a href="${pageContext.request.contextPath}/home/">На головну сторінку</a>
-<a href="${pageContext.request.contextPath}/newPatient/">Зареєструвати нового паціента</a>
 </body>
 <script> 
 	$("#get_Patients").click(showPatients);

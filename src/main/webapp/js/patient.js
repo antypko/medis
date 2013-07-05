@@ -9,7 +9,6 @@ function searchByName() {
 	if (name.length < 3) {
 		return true;
 	} else {
-		
 		$.get("searchByName/", {'name' : name}, function(data) {
 			fillTable(data);
 		});
@@ -18,7 +17,7 @@ function searchByName() {
 
 function addNewPatient(e) {
 	$.post("addPatient", $(this).serialize(), 
-			function(response) { /*$("#patientFormResponse").text(response); */});
+			function(response) { $("#patientFormResponse").text("Паціент " + response.name + " був доданий успішно!!!!");});
 	e.preventDefault();	
 };
 
@@ -38,7 +37,6 @@ function fillTable(patients) {
 				patient_blood_type, patient_telephone);
 		patient_row.click(function(){
 			document.location = document.location.href + "editPatient/" + varId;
-//			console.log(document.location.href + "editPatient/" + varId);
 		});
 		$("#patients_table tbody").append(patient_row);
 	});
