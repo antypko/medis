@@ -7,14 +7,14 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery-1.9.1.js"></script>
-<%-- <script type="text/javascript" src="${pageContext.request.contextPath}/js/event.js"></script> --%>
+<script type="text/javascript" src="${pageContext.request.contextPath}/js/patient.js"></script>
 <title>Medis</title>
 </head>
 <body>
-<h1>Медичні картки</h1>
-
+<h1>Сторінка з паціентами</h1>
+<div>${patient.name}</div>
 </body>
 <script> 
-	
+		
 </script>
 </html>

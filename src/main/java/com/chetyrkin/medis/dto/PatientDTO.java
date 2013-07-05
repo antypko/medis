@@ -1,10 +1,13 @@
 package com.chetyrkin.medis.dto;
 
+import java.io.Serializable;
 import java.sql.Date;
 
 import com.chetyrkin.medis.domain.enums.BloodType;
 
-public class PatientDTO {
+public class PatientDTO implements Serializable{
+
+	private static final long serialVersionUID = 1L;
 
 	private Long id;
 

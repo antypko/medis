@@ -11,8 +11,9 @@
 <title>Medis</title>
 </head>
 <body>
-	<h1>Welcome To Medis</h1>
-	<a href="${pageContext.request.contextPath}/patients/">Patients</a>
+	<h1>Вітаємо вас в системі Medis</h1>
+	<a href="${pageContext.request.contextPath}/patientsList/">Паціенти</a>
+	<a href="${pageContext.request.contextPath}/events/">Картки</a>
 	
 </body>
 </html>

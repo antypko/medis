@@ -13,6 +13,9 @@ import com.chetyrkin.medis.dto.PatientDTO;
 public class PatientTransformer {
 	
 	public PatientDTO toDTO(final Patient patient) {
+		if(null == patient) {
+			return new PatientDTO();
+		}
 		PatientDTO patientDTO = new PatientDTO();
 		patientDTO.setId(patient.getId());
 		patientDTO.setName(patient.getName());
@@ -26,6 +29,22 @@ public class PatientTransformer {
 		patientDTO.setSpecialAccounting(patient.getSpeciaAccounting());
 		patientDTO.setHiv(patient.getHiv());
 		return patientDTO;
+	}
+	
+	public Patient toDomain(final PatientDTO patientDTO) {
+		Patient patient =  new Patient();
+		patient.setId(patientDTO.getId());
+		patient.setName(patientDTO.getName());
+		patient.setSurname(patientDTO.getSurname());
+		patient.setFathersName(patientDTO.getFathersName());
+		patient.setBloodType(patientDTO.getBloodType());
+		patient.setSex(patientDTO.getSex());
+		patient.setTelephone(patientDTO.getTelephone());
+		patient.setWorkAdress(patientDTO.getWorkAdress());
+		patient.setLiveAdress(patientDTO.getLiveAdress());
+		patient.setSpeciaAccounting(patientDTO.getSpecialAccounting());
+		patient.setHiv(patientDTO.getHiv());
+		return patient;
 	}
 	
 	public Set<PatientDTO> toDTO(Collection<Patient> patients) {
