@@ -7,20 +7,28 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.chetyrkin.medis.dto.PatientDTO;
 import com.chetyrkin.medis.service.PatientService;
 
 @Controller
-@RequestMapping("/patientsList/editPatient")
+@RequestMapping("/editPatient")
 public class EditPatientController {
 
 	private PatientService patientService;
-	
-	@RequestMapping(value = "/{id}", method = RequestMethod.GET) 
-	public String getEditPatient(@PathVariable final Long id, ModelMap modelMap) {
-		modelMap.addAttribute("patient", patientService.findById(id));
+
+	@RequestMapping(value = "/{id}", method = RequestMethod.GET)
+	public String getEditPatient(@PathVariable final Long id, ModelMap modelMap, PatientDTO patientDTO) {
+			modelMap.addAttribute("patient", patientService.findById(id));
 		return "editPatient";
 	}
 	
+	@RequestMapping(value = "/update", method = RequestMethod.PUT)
+	public void updatePatient(ModelMap modelMap, PatientDTO patientDTO) {
+		System.out.println("update function");
+		patientService.saveOrUpdate(patientDTO);
+		modelMap.addAttribute("patient", patientDTO);
+	}
+
 	@Autowired
 	public void setPatientService(PatientService patientService) {
 		this.patientService = patientService;

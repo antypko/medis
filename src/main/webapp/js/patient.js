@@ -21,6 +21,17 @@ function addNewPatient(e) {
 	e.preventDefault();	
 };
 
+function editPatient(e) {
+	$.ajax({
+		  url: 'update',
+		  type: 'PUT',
+		  data: $(this).serialize(),
+		  success: function(data) {}
+		});
+//	$.put("update", $(this).serialize(), function(response) {});
+	e.preventDefault();	
+};
+
 function fillTable(patients) {
 	$("#patients_table tbody").empty();
 	$.each(patients, function() {
@@ -36,7 +47,10 @@ function fillTable(patients) {
 				patient_surname, patient_gender, patient_birth_date,
 				patient_blood_type, patient_telephone);
 		patient_row.click(function(){
-			document.location = document.location.href + "editPatient/" + varId;
+//			console.log(document.location);
+//			document.location = document.location.host + "/medis/editPatient/" + varId;
+//			console.log("http://" + document.location.host + "/medis/editPatient/update");
+			document.location = "http://" + document.location.host + "/medis/editPatient/" + varId;
 		});
 		$("#patients_table tbody").append(patient_row);
 	});

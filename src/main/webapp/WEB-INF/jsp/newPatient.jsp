@@ -21,10 +21,10 @@
 		<input type="text" name="surname" id="surname_input" />
 		<label for="fathersName_input">По-батькові: </label>
 		<input type="text" name="fathersName" id="fatherName_input" />
-		<input type="radio" name="sex" value="true" checked="checked" id="male"/>
-		<label for="male">М</label>
-		<input type="radio" name="sex" value="false" id="female"/>
-		<label for="female">Ж</label>
+		<select name="sex">
+			<option value="true">М</option>
+			<option value="false">Ж</option>
+		</select>
       	<input type="submit" value="Save Patient" />
       	
     </form>
