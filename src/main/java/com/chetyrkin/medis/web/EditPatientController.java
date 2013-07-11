@@ -22,9 +22,10 @@ public class EditPatientController {
 		return "editPatient";
 	}
 	
-	@RequestMapping(value = "/update", method = RequestMethod.PUT)
+	@RequestMapping(value = "/update", method = RequestMethod.POST)
 	public void updatePatient(ModelMap modelMap, PatientDTO patientDTO) {
 		System.out.println("update function");
+		System.out.println(patientDTO);
 		patientService.saveOrUpdate(patientDTO);
 		modelMap.addAttribute("patient", patientDTO);
 	}

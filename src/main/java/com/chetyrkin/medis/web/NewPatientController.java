@@ -27,6 +27,7 @@ public class NewPatientController {
 	@RequestMapping(value = "/addPatient", method = RequestMethod.POST)
 	public @ResponseBody
 	PatientDTO registerNewPatient(final PatientDTO patientDTO) {
+		System.out.println(patientDTO);
 		patientService.saveOrUpdate(patientDTO);
 		return patientDTO;
 	}

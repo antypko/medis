@@ -33,7 +33,7 @@
 			<option value="Bn">Bn</option>
 			<option value="ABp">ABp</option>
 			<option value="ABn">Abn</option>
-		</select>
+		</select> 
 		<%-- <label for="birth_date_input">Дата народження: </label>
 		<input type="text" name="birthDate" id="birth_date_input" value="${patient.birthDate}"/> --%>
 		<label for="telephone_input">Телефонний номер: </label>

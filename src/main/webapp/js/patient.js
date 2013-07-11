@@ -22,13 +22,7 @@ function addNewPatient(e) {
 };
 
 function editPatient(e) {
-	$.ajax({
-		  url: 'update',
-		  type: 'PUT',
-		  data: $(this).serialize(),
-		  success: function(data) {}
-		});
-//	$.put("update", $(this).serialize(), function(response) {});
+	$.post("update", $(this).serialize(), function(data){});
 	e.preventDefault();	
 };
 

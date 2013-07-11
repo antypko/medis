@@ -230,4 +230,14 @@ public class PatientDTO implements Serializable{
 		return true;
 	}
 
+	@Override
+	public String toString() {
+		return "PatientDTO [id=" + id + ", name=" + name + ", surname="
+				+ surname + ", fathersName=" + fathersName + ", bloodType="
+				+ bloodType + ", sex=" + sex + ", birthDate=" + birthDate
+				+ ", telephone=" + telephone + ", workAdress=" + workAdress
+				+ ", liveAdress=" + liveAdress + ", specialAccounting="
+				+ specialAccounting + ", hiv=" + hiv + "]";
+	}
+
 }
