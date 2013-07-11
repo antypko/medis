@@ -18,14 +18,13 @@ public class EditPatientController {
 
 	@RequestMapping(value = "/{id}", method = RequestMethod.GET)
 	public String getEditPatient(@PathVariable final Long id, ModelMap modelMap, PatientDTO patientDTO) {
-			modelMap.addAttribute("patient", patientService.findById(id));
+		PatientDTO patinentDTO = patientService.findById(id);
+		modelMap.addAttribute("patient", patinentDTO);
 		return "editPatient";
 	}
 	
 	@RequestMapping(value = "/update", method = RequestMethod.POST)
 	public void updatePatient(ModelMap modelMap, PatientDTO patientDTO) {
-		System.out.println("update function");
-		System.out.println(patientDTO);
 		patientService.saveOrUpdate(patientDTO);
 		modelMap.addAttribute("patient", patientDTO);
 	}

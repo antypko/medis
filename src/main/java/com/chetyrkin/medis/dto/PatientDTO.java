@@ -17,7 +17,7 @@ public class PatientDTO implements Serializable{
 
 	private String fathersName;
 
-	private BloodType bloodType;
+	private String bloodType;
 
 	private Boolean sex;
 
@@ -69,11 +69,11 @@ public class PatientDTO implements Serializable{
 		this.fathersName = fathersName;
 	}
 
-	public BloodType getBloodType() {
+	public String getBloodType() {
 		return bloodType;
 	}
 
-	public void setBloodType(BloodType bloodType) {
+	public void setBloodType(String bloodType) {
 		this.bloodType = bloodType;
 	}
 

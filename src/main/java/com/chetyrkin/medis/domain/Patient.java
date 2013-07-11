@@ -4,6 +4,7 @@ import java.sql.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
@@ -28,8 +29,8 @@ public class Patient {
 	@Column(name="fathersName")
 	private String fathersName; 
 	
-	@Column(name="bloodType")
-	private BloodType bloodType; 
+	@Column(name="bloodType", columnDefinition="enum('Ap', 'An', 'Op', 'On', 'Bp', 'Bn', 'ABp', 'ABn')")
+	private String bloodType; 
 	
 	@Column(name="sex")
 	private Boolean sex;
@@ -84,11 +85,11 @@ public class Patient {
 		this.fathersName = fathersName;
 	}
 
-	public BloodType getBloodType() {
+	public String getBloodType() {
 		return bloodType;
 	}
 
-	public void setBloodType(BloodType bloodType) {
+	public void setBloodType(String bloodType) {
 		this.bloodType = bloodType;
 	}
 
