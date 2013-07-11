@@ -4,12 +4,10 @@ import java.sql.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-import com.chetyrkin.medis.domain.enums.BloodType;
 
 @Entity
 @Table(name="patient")
