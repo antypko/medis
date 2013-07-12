@@ -7,4 +7,6 @@ import com.chetyrkin.medis.dto.MedicalCardDTO;
 public interface MedicalCardService {
 
 	Set<MedicalCardDTO> getAll();
+	
+	MedicalCardDTO saveOrUpdate(MedicalCardDTO medicalCardDTO);
 }

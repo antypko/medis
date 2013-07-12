@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.chetyrkin.medis.dao.MedicalCardDAO;
+import com.chetyrkin.medis.domain.MedicalCard;
 import com.chetyrkin.medis.dto.MedicalCardDTO;
 import com.chetyrkin.medis.service.MedicalCardService;
 import com.chetyrkin.medis.transformer.MedicalCardTransformer;
@@ -14,7 +15,6 @@ import com.chetyrkin.medis.transformer.MedicalCardTransformer;
 @Service("medicalCardService") 
 @Transactional(readOnly = true)
 public class MedicalCardServiceImpl implements MedicalCardService {
-
 	
 	private MedicalCardDAO medicalCardDAO;
 	
@@ -29,5 +29,12 @@ public class MedicalCardServiceImpl implements MedicalCardService {
 	@Override
 	public Set<MedicalCardDTO> getAll() {
 		return medicalCardTransformer.toDTO(medicalCardDAO.getAll());
+	}
+
+	@Override
+	public MedicalCardDTO saveOrUpdate(MedicalCardDTO medicalCardDTO) {
+		MedicalCard medicalCard = medicalCardTransformer.toDomain(medicalCardDTO);
+		medicalCardDAO.saveOrUpdate(medicalCard);
+		return medicalCardTransformer.toDto(medicalCard);
 	}
 }

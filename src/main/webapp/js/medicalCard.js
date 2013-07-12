@@ -4,8 +4,11 @@ function showMedicalCards() {
 	});
 };
 
-
-
+function newMedicalCard(e) {
+	$.post("newMedicalCard", $(this).serialize(), 
+			function(response) { });
+	e.preventDefault();	
+};
 
 
 function fillTable(medicalCards) {
