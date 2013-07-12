@@ -41,13 +41,9 @@ function fillTable(patients) {
 				patient_surname, patient_gender, patient_birth_date,
 				patient_blood_type, patient_telephone);
 		patient_row.click(function(){
-//			console.log(document.location);
-//			document.location = document.location.host + "/medis/editPatient/" + varId;
-//			console.log("http://" + document.location.host + "/medis/editPatient/update");
 			document.location = "http://" + document.location.host + "/medis/editPatient/" + varId;
 		});
 		$("#patients_table tbody").append(patient_row);
 	});
-	
 };
 

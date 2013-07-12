@@ -1,48 +1,27 @@
-package com.chetyrkin.medis.domain;
+package com.chetyrkin.medis.dto;
 
 import java.sql.Timestamp;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToOne;
-import javax.persistence.Table;
+import com.chetyrkin.medis.domain.Patient;
 
+public class MedicalCardDTO {
 
-@Entity
-@Table(name="medical_card")
-public class MedicalCard {
+	private Long id;
 
-	@Id
-    @GeneratedValue
-    @Column(name="id")
-    private Long id;
-	
-	@OneToOne
-	@JoinColumn(name="patient_id")
 	private Patient patient;
-	
-	@Column(name="date")
+
 	private Timestamp date;
-	
-	@Column(name="clinic_name")
+
 	private String clinicName;
-	
-	@Column(name="hours_after_accident")
+
 	private Integer hoursAfterAccident;
 
-	@Column(name="hospitalized_in_planned_order")
 	private Boolean hospitalizedInPlannedOrder;
-	
-	@Column(name="hospitalization_diagnosis")
+
 	private String hospitalizationDiagnosis;
-	
-	@Column(name="facility_diagnosis")
+
 	private String facilityDiagnosis;
-	
-	@Column(name="clinical_diagnosis")
+
 	private String clinicalDiagnosis;
 
 	public Long getId() {
@@ -121,29 +100,13 @@ public class MedicalCard {
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result
-				+ ((clinicName == null) ? 0 : clinicName.hashCode());
-		result = prime
-				* result
-				+ ((clinicalDiagnosis == null) ? 0 : clinicalDiagnosis
-						.hashCode());
+		result = prime * result + ((clinicName == null) ? 0 : clinicName.hashCode());
+		result = prime * result + ((clinicalDiagnosis == null) ? 0 : clinicalDiagnosis.hashCode());
 		result = prime * result + ((date == null) ? 0 : date.hashCode());
-		result = prime
-				* result
-				+ ((facilityDiagnosis == null) ? 0 : facilityDiagnosis
-						.hashCode());
-		result = prime
-				* result
-				+ ((hospitalizationDiagnosis == null) ? 0
-						: hospitalizationDiagnosis.hashCode());
-		result = prime
-				* result
-				+ ((hospitalizedInPlannedOrder == null) ? 0
-						: hospitalizedInPlannedOrder.hashCode());
-		result = prime
-				* result
-				+ ((hoursAfterAccident == null) ? 0 : hoursAfterAccident
-						.hashCode());
+		result = prime * result + ((facilityDiagnosis == null) ? 0 : facilityDiagnosis.hashCode());
+		result = prime * result + ((hospitalizationDiagnosis == null) ? 0 : hospitalizationDiagnosis.hashCode());
+		result = prime * result + ((hospitalizedInPlannedOrder == null) ? 0 : hospitalizedInPlannedOrder.hashCode());
+		result = prime * result + ((hoursAfterAccident == null) ? 0 : hoursAfterAccident.hashCode());
 		result = prime * result + ((id == null) ? 0 : id.hashCode());
 		result = prime * result + ((patient == null) ? 0 : patient.hashCode());
 		return result;
@@ -157,7 +120,7 @@ public class MedicalCard {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		MedicalCard other = (MedicalCard) obj;
+		MedicalCardDTO other = (MedicalCardDTO) obj;
 		if (clinicName == null) {
 			if (other.clinicName != null)
 				return false;
@@ -181,14 +144,12 @@ public class MedicalCard {
 		if (hospitalizationDiagnosis == null) {
 			if (other.hospitalizationDiagnosis != null)
 				return false;
-		} else if (!hospitalizationDiagnosis
-				.equals(other.hospitalizationDiagnosis))
+		} else if (!hospitalizationDiagnosis.equals(other.hospitalizationDiagnosis))
 			return false;
 		if (hospitalizedInPlannedOrder == null) {
 			if (other.hospitalizedInPlannedOrder != null)
 				return false;
-		} else if (!hospitalizedInPlannedOrder
-				.equals(other.hospitalizedInPlannedOrder))
+		} else if (!hospitalizedInPlannedOrder.equals(other.hospitalizedInPlannedOrder))
 			return false;
 		if (hoursAfterAccident == null) {
 			if (other.hoursAfterAccident != null)
@@ -210,13 +171,8 @@ public class MedicalCard {
 
 	@Override
 	public String toString() {
-		return "MedicalCard [id=" + id + ", patient=" + patient + ", date=" + date
-				+ ", clinicName=" + clinicName + ", hoursAfterAccident="
-				+ hoursAfterAccident + ", hospitalizedInPlannedOrder="
-				+ hospitalizedInPlannedOrder + ", hospitalizationDiagnosis="
-				+ hospitalizationDiagnosis + ", facilityDiagnosis="
-				+ facilityDiagnosis + ", clinicalDiagnosis="
-				+ clinicalDiagnosis + "]";
+		return "MedicalCardDTO [id=" + id + ", patient=" + patient + ", date=" + date + ", clinicName=" + clinicName + ", hoursAfterAccident="
+				+ hoursAfterAccident + ", hospitalizedInPlannedOrder=" + hospitalizedInPlannedOrder + ", hospitalizationDiagnosis=" + hospitalizationDiagnosis
+				+ ", facilityDiagnosis=" + facilityDiagnosis + ", clinicalDiagnosis=" + clinicalDiagnosis + "]";
 	}
-		
 }

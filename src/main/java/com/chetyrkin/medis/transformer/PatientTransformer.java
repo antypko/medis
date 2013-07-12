@@ -51,7 +51,7 @@ public class PatientTransformer {
 	public Set<PatientDTO> toDTO(Collection<Patient> patients) {
 		Set<PatientDTO>patientsData = new HashSet<>();
 		for(Patient patient : patients) {
-			patientsData.add(toDTO(patient));
+			patientsData.add(this.toDTO(patient));
 		}
 		return patientsData;
 	}

@@ -13,7 +13,7 @@
 <body>
 	<h1>Вітаємо вас в системі Medis</h1>
 	<a href="${pageContext.request.contextPath}/patientsList/">Паціенти</a>
-	<a href="${pageContext.request.contextPath}/events/">Картки</a>
+	<a href="${pageContext.request.contextPath}/medicalCards/">Картки</a>
 	
 </body>
 </html>

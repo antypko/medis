@@ -17,8 +17,6 @@ import com.chetyrkin.medis.service.PatientService;
 public class PatientListController {
 
 	private PatientService patientService;
-
-	
 	
 	@Autowired
 	public PatientListController(PatientService patientService) {

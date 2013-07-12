@@ -1,21 +1,33 @@
 package com.chetyrkin.medis.service.impl;
 
+import java.util.Set;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.chetyrkin.medis.dao.MedicalCardDAO;
+import com.chetyrkin.medis.dto.MedicalCardDTO;
 import com.chetyrkin.medis.service.MedicalCardService;
+import com.chetyrkin.medis.transformer.MedicalCardTransformer;
 
-@Service("eventService") 
+@Service("medicalCardService") 
 @Transactional(readOnly = true)
 public class MedicalCardServiceImpl implements MedicalCardService {
 
 	
-	private MedicalCardDAO eventDAO;
+	private MedicalCardDAO medicalCardDAO;
 	
 	@Autowired
-	public MedicalCardServiceImpl(MedicalCardDAO eventDAO) {
-		this.eventDAO = eventDAO;
+	private MedicalCardTransformer medicalCardTransformer;
+	
+	@Autowired
+	public MedicalCardServiceImpl(MedicalCardDAO medicalCardDAO) {
+		this.medicalCardDAO = medicalCardDAO;
+	}
+
+	@Override
+	public Set<MedicalCardDTO> getAll() {
+		return medicalCardTransformer.toDTO(medicalCardDAO.getAll());
 	}
 }
