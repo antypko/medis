@@ -5,11 +5,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
-@RequestMapping("/events")
-public class EventController {
+@RequestMapping("/MedicalCards")
+public class MedicalCardController {
 
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String showEventsPage() {
-		return "event";
+		return "medicalCards";
 	}
 }
