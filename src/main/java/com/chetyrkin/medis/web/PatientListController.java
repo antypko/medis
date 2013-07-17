@@ -25,7 +25,7 @@ public class PatientListController {
 
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String showPatientsPage() {
-		return "patientsList";
+		return "patient/patientsList";
 	}
 
 	@RequestMapping(value = "/getPatients", method = RequestMethod.GET) 

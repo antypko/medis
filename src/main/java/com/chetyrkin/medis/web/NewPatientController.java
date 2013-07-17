@@ -21,7 +21,7 @@ public class NewPatientController {
 	
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String showNewPatientPage() {
-		return "newPatient";
+		return "patient/newPatient";
 	}
 
 	@RequestMapping(value = "/addPatient", method = RequestMethod.POST)

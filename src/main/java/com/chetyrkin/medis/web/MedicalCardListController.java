@@ -19,7 +19,7 @@ public class MedicalCardListController {
 	
 	@RequestMapping(value = "", method = RequestMethod.GET)
 	public String showEventsPage() {
-		return "medicalCardsList";
+		return "medicalCard/medicalCardsList";
 	}
 	
 	@RequestMapping(value = "/getMedicalCards", method = RequestMethod.GET) 

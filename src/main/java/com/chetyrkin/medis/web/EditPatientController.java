@@ -20,7 +20,7 @@ public class EditPatientController {
 	public String getEditPatient(@PathVariable final Long id, ModelMap modelMap, PatientDTO patientDTO) {
 		PatientDTO patinentDTO = patientService.findById(id);
 		modelMap.addAttribute("patient", patinentDTO);
-		return "editPatient";
+		return "patient/editPatient";
 	}
 	
 	@RequestMapping(value = "/update", method = RequestMethod.POST)

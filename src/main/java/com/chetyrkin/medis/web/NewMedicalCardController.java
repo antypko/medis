@@ -17,7 +17,7 @@ public class NewMedicalCardController {
 	
 	@RequestMapping(value ="", method=RequestMethod.GET)
 	public String showNewMedicalCardPage(){
-		return "newMedicalCard";
+		return "medicalCard/newMedicalCard";
 	}
 	
 	@RequestMapping(value ="/newMedicalCard", method=RequestMethod.POST)

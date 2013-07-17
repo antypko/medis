@@ -1,6 +1,6 @@
 function showMedicalCards() {
 	$.get("getMedicalCards", function(data) {
-		fillTable(data);
+		fillMedicalCardTable(data);
 	});
 };
 
@@ -11,7 +11,7 @@ function newMedicalCard(e) {
 };
 
 
-function fillTable(medicalCards) {
+function fillMedicalCardTable(medicalCards) {
 	$("#medical_cards_table tbody").empty();
 	$.each(medicalCards, function() {
 		console.log(this);
