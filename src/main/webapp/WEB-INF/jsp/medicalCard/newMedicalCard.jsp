@@ -17,9 +17,10 @@
 			<option value="true">ТАК</option>
 			<option value="false">НІ</option>
 		</select>
+		<input type="submit" value="Save medical card" />
 	 </form>
 </body>
 <script>
-$("#get_medicalCards").click(showMedicalCards);
+$("#new_medicalCard_form").click(newMedicalCard);
 </script>
 </html>

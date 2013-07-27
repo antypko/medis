@@ -8,6 +8,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.chetyrkin.medis.dao.MedicalCardDAO;
 import com.chetyrkin.medis.domain.MedicalCard;
+import com.chetyrkin.medis.domain.Patient;
 import com.chetyrkin.medis.dto.MedicalCardDTO;
 import com.chetyrkin.medis.service.MedicalCardService;
 import com.chetyrkin.medis.transformer.MedicalCardTransformer;
@@ -31,8 +32,13 @@ public class MedicalCardServiceImpl implements MedicalCardService {
 		return medicalCardTransformer.toDTO(medicalCardDAO.getAll());
 	}
 
+	
 	@Override
+	@Transactional(readOnly = false)
 	public MedicalCardDTO saveOrUpdate(MedicalCardDTO medicalCardDTO) {
+		Patient patient = new Patient();
+		patient.setId(1L);
+		medicalCardDTO.setPatient(patient);
 		MedicalCard medicalCard = medicalCardTransformer.toDomain(medicalCardDTO);
 		medicalCardDAO.saveOrUpdate(medicalCard);
 		return medicalCardTransformer.toDto(medicalCard);
