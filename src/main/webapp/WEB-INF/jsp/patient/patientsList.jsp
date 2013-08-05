@@ -24,6 +24,8 @@
 			<th>Дата народження</th>
 			<th>Группа крові</th>
 			<th>Телефон</th>
+			<th></th>
+			<th></th>
 		</tr>
 	</thead>
 	<tbody>
@@ -33,6 +35,6 @@
 <script> 
 	$("#get_Patients").click(showPatients);
 	$("#name_search_input").keyup(searchByName);
-	$(".patient_row").click(function(){console.log(this);});
+	
 </script>
 </html>

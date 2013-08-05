@@ -5,7 +5,7 @@ function showMedicalCards() {
 };
 
 function addNewMedicalCard(e) {
-	$.post("addNewMedicalCard", $(this).serialize(), function(response) { });
+	$.post("newMedicalCard/addNewMedicalCard", $(this).serialize(), function(response) { });
 	e.preventDefault();	
 };
 

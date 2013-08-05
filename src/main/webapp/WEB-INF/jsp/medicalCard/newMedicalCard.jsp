@@ -10,6 +10,10 @@
 	<h1>Медичні картки</h1>
 	<h2>Стоворити нову медичну картку</h2>
 	 <form id="new_medicalCard_form">
+	 	<label for="patientName_input">№ паціента: </label>
+	 	<input type="text" name="patient.id" id="patient.id" readonly="readonly" value="${patient.id}"/>
+	 	<label for="patientName_input">Ім'я паціента: </label>
+	 	<input type="text" name="patient.name" id="patient.name" readonly="readonly" value="${patient.name}"/>
 	 	<label for="clinicName_input">Назва клініки: </label>
 		<input type="text" name="clinicName" id="clinicName_input" />
  		<label for="hospitalized_in_planned_order">Госпіталізований в плановому порядку: </label>

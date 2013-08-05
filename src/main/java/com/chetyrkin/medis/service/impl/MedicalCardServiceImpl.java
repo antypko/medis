@@ -36,10 +36,6 @@ public class MedicalCardServiceImpl implements MedicalCardService {
 	@Override
 	@Transactional(readOnly = false)
 	public MedicalCardDTO saveOrUpdate(MedicalCardDTO medicalCardDTO) {
-		// TODO: this should not be like this:
-		Patient patient = new Patient();
-		patient.setId(1L);
-		medicalCardDTO.setPatient(patient);
 		MedicalCard medicalCard = medicalCardTransformer.toDomain(medicalCardDTO);
 		medicalCardDAO.saveOrUpdate(medicalCard);
 		return medicalCardTransformer.toDto(medicalCard);
