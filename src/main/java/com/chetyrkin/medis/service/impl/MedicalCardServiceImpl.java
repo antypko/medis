@@ -32,7 +32,6 @@ public class MedicalCardServiceImpl implements MedicalCardService {
 		return medicalCardTransformer.toDTO(medicalCardDAO.getAll());
 	}
 
-	
 	@Override
 	@Transactional(readOnly = false)
 	public MedicalCardDTO saveOrUpdate(MedicalCardDTO medicalCardDTO) {

@@ -20,10 +20,6 @@ function fillMedicalCardTable(medicalCards) {
 		var medicalCard_date = $("<td></td>").text(this.date);
 		var medicalCard_row = $("<tr class='medicalCard_row'></tr>").append(medicalCard_id, medicalCard_fullname,
 				medicalCard_date);
-		medicalCard_row.click(function(){
-			console.log(varId);
-//			document.location = "http://" + document.location.host + "/medis/editMedicalCard/" + varId;
-		});
 		$("#medical_cards_table tbody").append(medicalCard_row);
 	});
 };
