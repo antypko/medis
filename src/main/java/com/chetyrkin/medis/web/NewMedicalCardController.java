@@ -16,12 +16,12 @@ public class NewMedicalCardController {
 
 	private MedicalCardService medicalCardService;
 	
-	@RequestMapping(value ="", method=RequestMethod.GET)
+	@RequestMapping(value ="/", method=RequestMethod.GET)
 	public String showNewMedicalCardPage(){
 		return "medicalCard/newMedicalCard";
 	}
 	
-	@RequestMapping(value ="/newMedicalCard", method=RequestMethod.POST)
+	@RequestMapping(value ="/addNewMedicalCard", method=RequestMethod.POST)
 	public @ResponseBody MedicalCardDTO createMedicalCard(MedicalCardDTO medicalCardDTO) {
 		medicalCardService.saveOrUpdate(medicalCardDTO);
 		return medicalCardDTO;

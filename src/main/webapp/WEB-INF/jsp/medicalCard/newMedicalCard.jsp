@@ -21,6 +21,6 @@
 	 </form>
 </body>
 <script>
-$("#new_medicalCard_form").click(newMedicalCard);
+	$("#new_medicalCard_form").submit(addNewMedicalCard);
 </script>
 </html>
