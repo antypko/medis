@@ -9,6 +9,7 @@
 <body>
 	<h1>Медичні картки</h1>
 	<h2>Стоворити нову медичну картку</h2>
+	<a href="${pageContext.request.contextPath}/home/">На головну сторінку</a>
 	 <form id="new_medicalCard_form">
 	 	<label for="patientName_input">№ паціента: </label>
 	 	<input type="text" name="patient.id" id="patient.id" readonly="readonly" value="${patient.id}"/>
