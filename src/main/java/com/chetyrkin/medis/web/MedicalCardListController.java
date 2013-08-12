@@ -1,29 +1,26 @@
 package com.chetyrkin.medis.web;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Set;
 
 import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletResponse;
 
-import org.apache.tomcat.util.http.fileupload.IOUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.util.FileCopyUtils;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.chetyrkin.medis.dto.MedicalCardDTO;
 import com.chetyrkin.medis.service.MedicalCardService;
 
 @Controller
-@RequestMapping("/medicalCards")
+@RequestMapping("/medicalCard")
 public class MedicalCardListController {
 
 	private MedicalCardService medicalCardService;
@@ -44,27 +41,10 @@ public class MedicalCardListController {
 
 	@RequestMapping(value = "/getFile", method = RequestMethod.GET)
 	@ResponseBody
-	public void getMedicalCardFile(HttpServletResponse response) throws FileNotFoundException {
-		File medicalCard = new File(servletContext.getRealPath("/pdf/1.pdf"));
-		InputStream is = new FileInputStream(medicalCard);
-		response.setContentType("application/pdf");
-		response.setContentLength(new Long(medicalCard.length()).intValue());
-		response.setHeader("Content-Disposition", "attachment; filename=\"1.pdf\"");
-		try {
-			System.out.println("starting");
-			OutputStream stream = response.getOutputStream();
-//			stream.write(is.read());
-//			IOUtils.copy(is, stream);
-//			response.flushBuffer();
-			FileCopyUtils.copy(is, stream);
-			System.out.println("file sended");
-//			stream.flush();
-			response.flushBuffer();
-			System.out.println("response buffer flushed");
-//			stream.close();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+	public ModelAndView getMedicalCardFile(HttpServletResponse response) throws IOException {
+		Map<String, String> map =  new HashMap();
+		map.put("some", "medical card");
+		return new ModelAndView("pdf", map);
 	}
 
 	@Autowired
