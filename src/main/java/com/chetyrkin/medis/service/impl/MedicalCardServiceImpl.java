@@ -8,7 +8,6 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.chetyrkin.medis.dao.MedicalCardDAO;
 import com.chetyrkin.medis.domain.MedicalCard;
-import com.chetyrkin.medis.domain.Patient;
 import com.chetyrkin.medis.dto.MedicalCardDTO;
 import com.chetyrkin.medis.service.MedicalCardService;
 import com.chetyrkin.medis.transformer.MedicalCardTransformer;

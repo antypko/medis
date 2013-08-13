@@ -23,6 +23,8 @@
 		<tbody>
 		</tbody>
 	</table>
+	
+	
 </body>
 <script>
 $("#get_medicalCards").click(showMedicalCards);
