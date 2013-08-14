@@ -9,4 +9,6 @@ public interface MedicalCardService {
 	Set<MedicalCardDTO> getAll();
 	
 	MedicalCardDTO saveOrUpdate(MedicalCardDTO medicalCardDTO);
+	
+	MedicalCardDTO findById(Long id);
 }

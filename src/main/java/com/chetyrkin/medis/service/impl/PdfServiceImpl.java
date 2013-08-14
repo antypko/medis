@@ -13,14 +13,21 @@ import com.lowagie.text.pdf.PdfContentByte;
 public class PdfServiceImpl implements PdfService {
 
 	@Override
-	public void addText(String text, PdfContentByte pdfContentByte, int x, int y) {
+	public void addText(String text, PdfContentByte pdfContentByte, int fontSize, int x, int y) {
 		try {
 		      BaseFont baseFont = BaseFont.createFont(BaseFont.HELVETICA, BaseFont.CP1252, BaseFont.NOT_EMBEDDED);
 		      pdfContentByte.saveState();
 		      pdfContentByte.beginText();
 		      pdfContentByte.moveText(x, y);
-		      pdfContentByte.setFontAndSize(baseFont, 12);
-		      pdfContentByte.showText(text);
+		      pdfContentByte.setFontAndSize(baseFont, fontSize);
+		      if(text != null){
+		    	  if (text.equals("null")) 
+		    		  pdfContentByte.showText("");
+		    	  else
+		    		  pdfContentByte.showText(text);  
+		      } else {
+		    	  pdfContentByte.showText("");
+		      }
 		      pdfContentByte.endText();
 		      pdfContentByte.restoreState();
 		    } catch (DocumentException e) {
@@ -28,6 +35,7 @@ public class PdfServiceImpl implements PdfService {
 		    } catch (IOException e) {
 		      e.printStackTrace();
 		    }
+		
 	}
 
 }

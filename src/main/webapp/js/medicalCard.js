@@ -20,7 +20,7 @@ function fillMedicalCardTable(medicalCards) {
 		var medicalCard_date = $("<td></td>").text(this.date);
 		var medicalCard_downloadButton = $("<td><button type='button'>Завантажити карточку</button></td>"); 
 		medicalCard_downloadButton.click(function(){
-				document.location = "http://" + document.location.host + "/medis/medicalCard/getFile.pdf";
+				document.location = "http://" + document.location.host + "/medis/medicalCard/" + varId + "/getFile.pdf";
 		});
 		var medicalCard_row = $("<tr class='medicalCard_row'></tr>").append(medicalCard_id, medicalCard_fullname,
 				medicalCard_date,medicalCard_downloadButton);

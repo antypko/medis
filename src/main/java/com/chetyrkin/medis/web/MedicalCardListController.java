@@ -35,11 +35,12 @@ public class MedicalCardListController {
 		return medicalCardService.getAll();
 	}
 
-	@RequestMapping(value = "getFile", method = RequestMethod.GET)
+	@RequestMapping(value = "{id}/getFile", method = RequestMethod.GET)
 	@ResponseBody
-	public ModelAndView getMedicalCardFile(HttpServletResponse response) throws IOException {
+	public ModelAndView getMedicalCardFile(HttpServletResponse response, @PathVariable long id) throws IOException {
 		Map<String, Object> map =  new HashMap<>();
-		map.put("some", "medical card");
+		MedicalCardDTO medicalCardDTO = medicalCardService.findById(id);
+		map.put("medicalCard", medicalCardDTO);
 		return new ModelAndView("pdf", map);
 	}
 	
