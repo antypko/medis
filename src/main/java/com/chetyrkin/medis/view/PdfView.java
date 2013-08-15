@@ -82,12 +82,14 @@ public class PdfView extends AbstractPdfView {
 		/*=================================================================================*/
 		//105/557 patient blood type
 		String bloodType = medicalCardDTO.getPatient().getBloodType();
-		int lastSymbol = bloodType.length()-1;
-		String bloodGroup = bloodType.substring(0, lastSymbol);
-		pdfService.addText(bloodGroup, pdfContentByte, 12, 105, 557);
-		// 340/557 patient Rh type
-		String rh = bloodType.substring(lastSymbol);
-		pdfService.addText(rh, pdfContentByte, 12, 340, 557);
+		if(bloodType != null) {
+			int lastSymbol = bloodType.length()-1;
+			String bloodGroup = bloodType.substring(0, lastSymbol);
+			pdfService.addText(bloodGroup, pdfContentByte, 12, 105, 557);
+			// 340/557 patient Rh type
+			String rh = bloodType.substring(lastSymbol);
+			pdfService.addText(rh, pdfContentByte, 12, 340, 557);
+		}
 		/*=================================================================================*/
 		//170/485 surname + name + fathers name
 		StringBuilder fullName = new StringBuilder();
