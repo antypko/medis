@@ -6,6 +6,7 @@
 
 <!DOCTYPE html>
 <html>
+
 <head>
 <meta charset="UTF-8">
 <title>Medis</title>
@@ -15,5 +16,9 @@
 	<a href="${pageContext.request.contextPath}/patientsList/">Паціенти</a>
 	<a href="${pageContext.request.contextPath}/medicalCard/">Картки</a>
 	
+
 </body>
+<script>
+	
+</script>
 </html>

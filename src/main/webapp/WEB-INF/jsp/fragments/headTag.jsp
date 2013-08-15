@@ -7,12 +7,18 @@
     <spring:url value="/webjars/jquery/2.0.2/jquery.js" var="jQuery"/>
     <script src="${jQuery}"></script>
     
+  	<spring:url value="/webjars/jquery-ui/1.9.2/js/jquery-ui-1.9.2.custom.js" var="jQueryUi"/>
+  	<script src="${jQueryUi}"></script> 
+    
+    <spring:url value="/webjars/jquery-ui/1.9.2/css/smoothness/jquery-ui-1.9.2.custom.css" var="jQueryUiCss"/>
+ 	
+    <link href="${jQueryUiCss}" rel="stylesheet"></link>
+    
     <spring:url value="/js/medicalCard.js" var="medicalCard"/>
     <script src="${medicalCard}"></script>
     
     <spring:url value="/js/patient.js" var="patient"/>
     <script src="${patient}"></script>
 
-    <%-- <spring:url value="/webjars/jquery/1.9.0/jquery.js" var="jQuery"/>
-    <script src="${jQuery}"></script> --%>
+   
 </head>
