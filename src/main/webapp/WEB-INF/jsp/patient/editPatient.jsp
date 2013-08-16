@@ -50,7 +50,6 @@
 		</select>
       	<input type="submit" value="Save Patient" />
 	 </form>
-	<div>${patient.name}</div>
 </body>
 <script>
 $("#blood_type_input").val("${patient.bloodType}");

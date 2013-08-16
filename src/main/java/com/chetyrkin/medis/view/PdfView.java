@@ -44,22 +44,23 @@ public class PdfView extends AbstractPdfView {
 //////////////////////////////////////////////////////////////////////
 /////////TODO: temporary measures, should be deleted in nearest future
 
-		MedicalCardDTO medicalCardDTO = (MedicalCardDTO) model.get("medicalCard");
-		PdfImportedPage page = writer.getImportedPage(reader, 1);
-		doc.newPage();
-		pdfContentByte.addTemplate(page, 0, 0);
-		fillFirstPage (medicalCardDTO, pdfContentByte);
+// don't delete it
+//		MedicalCardDTO medicalCardDTO = (MedicalCardDTO) model.get("medicalCard");
+//		PdfImportedPage page = writer.getImportedPage(reader, 1);
+//		doc.newPage();
+//		pdfContentByte.addTemplate(page, 0, 0);
+//		fillFirstPage (medicalCardDTO, pdfContentByte);
 
-//		for (int i = 1; i <= numberOfPages; i++) {
-//			PdfImportedPage page = writer.getImportedPage(reader, i);
-//			doc.newPage();
-//			pdfContentByte.addTemplate(page, 0, 0);
+		for (int i = 1; i <= numberOfPages; i++) {
+			PdfImportedPage page = writer.getImportedPage(reader, i);
+			doc.newPage();
+			pdfContentByte.addTemplate(page, 0, 0);
 //			fillFirstPage (medicalCardDTO, pdfContentByte);
-//			
+			
 //TODO: temporary measures, should be deleted in nearest future
-//			if( x != null && y != null)
-//				pdfService.addText(str, pdfContentByte, x, y);
-//		}
+			if( x != null && y != null)
+				pdfService.addText(str, pdfContentByte, 12, x, y);
+		}
 
 	}
 	
