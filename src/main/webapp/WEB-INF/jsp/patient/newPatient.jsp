@@ -5,6 +5,9 @@
 <!DOCTYPE html>
 <html>
 <jsp:include page="../fragments/headTag.jsp"/>
+
+
+
 <body>
 <h1>Сторінка з паціентами</h1>
 <a href="<c:url value="/j_spring_security_logout" />" > Logout</a>
@@ -17,6 +20,8 @@
 		<input type="text" name="surname" id="surname_input" />
 		<label for="fathersName_input">По-батькові: </label>
 		<input type="text" name="fathersName" id="fatherName_input" />
+		<label for="birthDate_input">Дата народження: </label>
+		<input type="text" name="birthDate" id="birthDate_input" />
 		<select name="sex">
 			<option value="true">М</option>
 			<option value="false">Ж</option>
@@ -28,5 +33,8 @@
 </body>
 <script> 
 	$("#new_patient_form").submit(addNewPatient);
+	$(document).ready(function() {
+	    $("#birthDate_input").datepicker();
+	  });
 </script>
 </html>

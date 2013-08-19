@@ -23,6 +23,7 @@ public class PatientTransformer {
 		patientDTO.setFathersName(patient.getFathersName());
 		patientDTO.setBloodType(patient.getBloodType());
 		patientDTO.setSex(patient.getSex());
+		patientDTO.setBirthDate(patient.getBirthDate());
 		patientDTO.setTelephone(patient.getTelephone());
 		patientDTO.setWorkAdress(patient.getWorkAdress());
 		patientDTO.setLiveAdress(patient.getLiveAdress());
@@ -39,6 +40,7 @@ public class PatientTransformer {
 		patient.setFathersName(patientDTO.getFathersName());
 		patient.setBloodType(patientDTO.getBloodType());
 		patient.setSex(patientDTO.getSex());
+		patient.setBirthDate(patientDTO.getBirthDate());
 		patient.setTelephone(patientDTO.getTelephone());
 		patient.setWorkAdress(patientDTO.getWorkAdress());
 		patient.setLiveAdress(patientDTO.getLiveAdress());
