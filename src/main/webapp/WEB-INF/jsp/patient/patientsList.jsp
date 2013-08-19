@@ -6,9 +6,10 @@
 <html>
 <jsp:include page="../fragments/headTag.jsp"/>
 <body>
+<jsp:include page="../fragments/bodyHeader.jsp"/>
 <h1>Сторінка з паціентами</h1>
-<a href="${pageContext.request.contextPath}/home/">На головну сторінку</a>
 <a href="${pageContext.request.contextPath}/newPatient/">Зареєструвати нового паціента</a>
+
 <button id="get_Patients" type="submit" name="Get patients" value="Get patients">Показати всіх паціентів</button>
 
 <label for="name_search_input">Шукати паціента за ім'ям: </label>
@@ -35,6 +36,5 @@
 <script> 
 	$("#get_Patients").click(showPatients);
 	$("#name_search_input").keyup(searchByName);
-	
 </script>
 </html>

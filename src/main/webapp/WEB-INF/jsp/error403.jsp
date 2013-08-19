@@ -2,10 +2,7 @@
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
-<head>
-<meta charset="UTF-8">
-<title>Error403</title>
-</head>
+<jsp:include page="fragments/headTag.jsp"/>
 <body>
 <h1>Error403</h1>
 </body>

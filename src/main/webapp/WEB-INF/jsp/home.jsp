@@ -6,14 +6,15 @@
 
 <!DOCTYPE html>
 <html>
-<head>
-<meta charset="UTF-8">
-<title>Medis</title>
-</head>
+<jsp:include page="fragments/headTag.jsp"/>
 <body>
+	<jsp:include page="fragments/bodyHeader.jsp"/>
 	<h1>Вітаємо вас в системі Medis</h1>
-	<a href="${pageContext.request.contextPath}/patientsList/">Паціенти</a>
-	<a href="${pageContext.request.contextPath}/medicalCards/">Картки</a>
-	
+	<%-- <a href="${pageContext.request.contextPath}/patientsList/">Паціенти</a>
+	<a href="${pageContext.request.contextPath}/medicalCard/">Картки</a> --%>
 </body>
+<script>
+	
+</script>
+
 </html>

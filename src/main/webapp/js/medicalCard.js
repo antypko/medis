@@ -1,5 +1,5 @@
 function showMedicalCards() {
-	$.get("getMedicalCards", function(data) {
+	$.get("medicalCard/getMedicalCards", function(data) {
 		fillMedicalCardTable(data);
 	});
 };
@@ -20,7 +20,7 @@ function fillMedicalCardTable(medicalCards) {
 		var medicalCard_date = $("<td></td>").text(this.date);
 		var medicalCard_downloadButton = $("<td><button type='button'>Завантажити карточку</button></td>"); 
 		medicalCard_downloadButton.click(function(){
-			$.get("getFile");
+				document.location = "http://" + document.location.host + "/medis/medicalCard/" + varId + "/getFile.pdf";
 		});
 		var medicalCard_row = $("<tr class='medicalCard_row'></tr>").append(medicalCard_id, medicalCard_fullname,
 				medicalCard_date,medicalCard_downloadButton);

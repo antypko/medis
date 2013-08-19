@@ -7,8 +7,8 @@
 <html>
 <jsp:include page="../fragments/headTag.jsp"/>
 <body>
+<jsp:include page="../fragments/bodyHeader.jsp"/>
 	<h1>Сторінка редагування даних паціента</h1>
-	<a href="${pageContext.request.contextPath}/home/">На головну сторінку</a>
 	 <form id="edit_patient_form">
 	 	<input type="text" name="id" id="id_input" hidden="true" value="${patient.id}"/>
 	 	<label for="name_input">Ім'я: </label>
@@ -50,7 +50,6 @@
 		</select>
       	<input type="submit" value="Save Patient" />
 	 </form>
-	<div>${patient.name}</div>
 </body>
 <script>
 $("#blood_type_input").val("${patient.bloodType}");

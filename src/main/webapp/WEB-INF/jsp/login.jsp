@@ -6,10 +6,7 @@
 
 <!DOCTYPE html>
 <html>
-<head>
-<meta charset="UTF-8">
-<title>Medis</title>
-</head>
+<jsp:include page="fragments/headTag.jsp"/>
 <body>
 	<h1>Login</h1>
 	<form id="login" method="POST" action="<c:url value="/j_spring_security_check" />">
@@ -24,4 +21,5 @@
 		<input type="submit" value="Login" />
 	</form>
 </body>
+
 </html>
