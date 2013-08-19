@@ -1,5 +1,5 @@
 function showMedicalCards() {
-	$.get("getMedicalCards", function(data) {
+	$.get("medicalCard/getMedicalCards", function(data) {
 		fillMedicalCardTable(data);
 	});
 };

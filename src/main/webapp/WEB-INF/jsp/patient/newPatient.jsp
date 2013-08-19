@@ -6,10 +6,10 @@
 <html>
 <jsp:include page="../fragments/headTag.jsp"/>
 <body>
+<jsp:include page="../fragments/bodyHeader.jsp"/>
 <h1>Сторінка з паціентами</h1>
 <a href="<c:url value="/j_spring_security_logout" />" > Logout</a>
 <h2>Зареєструвати нового паціента</h2>
-<a href="${pageContext.request.contextPath}/home/">На головну сторінку</a>
     <form id="new_patient_form">
 		<label for="name_input">Ім'я: </label>
 		<input type="text" name="name" id="name_input" />

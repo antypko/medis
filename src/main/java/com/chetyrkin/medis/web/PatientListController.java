@@ -23,7 +23,7 @@ public class PatientListController {
 		this.patientService = patientService;
 	}
 
-	@RequestMapping(value = "/", method = RequestMethod.GET)
+	@RequestMapping(value = "", method = RequestMethod.GET)
 	public String showPatientsPage() {
 		return "patient/patientsList";
 	}

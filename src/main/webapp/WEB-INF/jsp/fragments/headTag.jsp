@@ -14,7 +14,7 @@
     <link href="${jQueryUiCss}" rel="stylesheet"></link>
     
     <spring:url value="/webjars/bootstrap/2.3.2/css/bootstrap.min.css" var="bootstrapCss"/>
-    <link href="${bootstrapCss}" rel="stylesheet"/>
+    <link href="${bootstrapCss}" rel="stylesheet"></link>
     
     <spring:url value="/js/medicalCard.js" var="medicalCard"/>
     <script src="${medicalCard}"></script>

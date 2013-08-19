@@ -1,5 +1,5 @@
 function showPatients() {
-	$.get("getPatients", function(data) {
+	$.get("patientsList/getPatients", function(data) {
 		fillTable(data);
 	});
 };
@@ -9,7 +9,7 @@ function searchByName() {
 	if (name.length < 3) {
 		return true;
 	} else {
-		$.get("searchByName/", {'name' : name}, function(data) {
+		$.get("patientsList/searchByName/", {'name' : name}, function(data) {
 			fillTable(data);
 		});
 	}
