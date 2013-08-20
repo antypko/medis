@@ -31,7 +31,7 @@
 <script> 
 	$("#new_patient_form").submit(addNewPatient);
 	$(document).ready(function() {
-	    $("#birthDate_input").datepicker();
+	    $("#birthDate_input").datepicker({ dateFormat: "yy-mm-dd" });
 	  });
 </script>
 </html>

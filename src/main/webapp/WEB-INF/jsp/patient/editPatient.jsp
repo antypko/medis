@@ -17,6 +17,8 @@
 		<input type="text" name="surname" id="surname_input"  value="${patient.surname}"/>
 		<label for="fathersName_input">По-батькові: </label>
 		<input type="text" name="fathersName" id="fatherName_input" value="${patient.fathersName}"/>
+		<label for="birthDate_input">Дата народження: </label>
+		<input type="text" name="birthDate" id="birthDate_input" value="${patient.birthDate}"/>
 		<label for="blood_type_input">Група крові: </label>
 		<select id="blood_type_input" name="bloodType">
 			<option value="Ap">Ap</option>
