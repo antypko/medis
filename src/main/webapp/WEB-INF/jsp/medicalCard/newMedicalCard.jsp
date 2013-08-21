@@ -8,9 +8,8 @@
 <jsp:include page="../fragments/headTag.jsp"/>
 <body>
 <jsp:include page="../fragments/bodyHeader.jsp"/>
-	<h3>Медичні картки</h3>
-	<div>Стоворити нову медичну картку</div>
-	 <form id="new_medicalCard_form">
+	<h3>Стоворити нову медичну картку</h3>
+	 <form class="well" id="new_medicalCard_form">
 	 	<label for="patientName_input">№ паціента: </label>
 	 	<input type="text" name="patient.id" id="patient.id" readonly="readonly" value="${patient.id}"/>
 	 	<label for="patientName_input">Ім'я паціента: </label>

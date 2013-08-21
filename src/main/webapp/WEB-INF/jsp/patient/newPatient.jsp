@@ -10,7 +10,7 @@
 <h3>Сторінка з паціентами</h3>
 
 <div>Зареєструвати нового паціента</div>
-    <form id="new_patient_form">
+    <form class="well" id="new_patient_form">
 		<label for="name_input">Ім'я: </label>
 		<input type="text" name="name" id="name_input" />
 		<label for="surname_input">Прізвище: </label>
@@ -19,7 +19,8 @@
 		<input type="text" name="fathersName" id="fatherName_input" />
 		<label for="birthDate_input">Дата народження: </label>
 		<input type="text" name="birthDate" id="birthDate_input" />
-		<select name="sex">
+		<label for="sex_input">Стать</label>
+		<select id="sex_input" name="sex">
 			<option value="true">М</option>
 			<option value="false">Ж</option>
 		</select>

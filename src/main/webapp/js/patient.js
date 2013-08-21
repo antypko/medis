@@ -17,7 +17,10 @@ function searchByName() {
 
 function addNewPatient(e) {
 	$.post("addPatient", $(this).serialize(), 
-			function(response) { $("#patientFormResponse").text("Паціент " + response.name + " був доданий успішно!!!!");});
+			function(response) { 
+		document.location = "http://" + document.location.host + "/medis/editPatient/" + response.id;
+		/*$("#patientFormResponse").text("Паціент " + response.name + " був доданий успішно!!!!");*/
+		  });
 	e.preventDefault();	
 };
 

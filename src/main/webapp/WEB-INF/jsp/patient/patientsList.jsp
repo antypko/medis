@@ -12,10 +12,10 @@
 
 <button class="btn btn-info" id="get_Patients" type="submit" name="Get patients" value="Get patients">Показати всіх паціентів</button>
 
-<label for="name_search_input">Шукати паціента за ім'ям: </label>
-<input type="text" name="name_search_input" id="name_search_input" />
+<span>Шукати паціента за ім'ям: </span>
+<input class="input-medium search-query" type="text" name="name_search_input" id="name_search_input" />
 
-<table id ="patients_table" class="table">
+<table id ="patients_table" class="table table-striped table-condensed">
 	<thead>
 		<tr>
 			<th>Id</th>

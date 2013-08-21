@@ -9,7 +9,7 @@
 <body>
 <jsp:include page="../fragments/bodyHeader.jsp"/>
 	<h3>Сторінка редагування даних паціента</h3>
-	 <form id="edit_patient_form">
+	 <form class="well" id="edit_patient_form">
 	 	<input type="text" name="id" id="id_input" hidden="true" value="${patient.id}"/>
 	 	<label for="name_input">Ім'я: </label>
 		<input type="text" name="name" id="name_input" value="${patient.name}"/>

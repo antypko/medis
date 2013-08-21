@@ -10,7 +10,7 @@
 <jsp:include page="../fragments/bodyHeader.jsp"/>
 	<h3>Медичні картки</h3>
 	<button  class="btn btn-info" id="get_medicalCards" type="submit" name="Get medical cards" value="Get medical cards">Показати всі медичні картки</button>
-	<table id="medical_cards_table" class="table">
+	<table id="medical_cards_table" class="table table-striped table-condensed">
 		<thead>
 			<tr>
 				<th>Id</th>

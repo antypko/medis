@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.chetyrkin.medis.dao.PatientDAO;
+import com.chetyrkin.medis.domain.Patient;
 import com.chetyrkin.medis.dto.PatientDTO;
 import com.chetyrkin.medis.service.PatientService;
 import com.chetyrkin.medis.transformer.PatientTransformer;
@@ -37,8 +38,10 @@ public class PatientServiceImpl implements PatientService {
 
 	@Override
 	@Transactional(readOnly = false)
-	public void saveOrUpdate(PatientDTO patientDTO) {
-		patientDAO.saveOrUpdate(patientTransformer.toDomain(patientDTO));
+	public PatientDTO saveOrUpdate(PatientDTO patientDTO) {
+		Patient patient = patientTransformer.toDomain(patientDTO);
+		patientDAO.saveOrUpdate(patient);
+		return patientTransformer.toDTO(patient);
 	}
 
 	@Override
