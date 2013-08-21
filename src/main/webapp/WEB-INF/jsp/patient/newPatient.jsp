@@ -8,7 +8,6 @@
 <body>
 <jsp:include page="../fragments/bodyHeader.jsp"/>
 <h1>Сторінка з паціентами</h1>
-<a href="<c:url value="/j_spring_security_logout" />" > Logout</a>
 <h2>Зареєструвати нового паціента</h2>
     <form id="new_patient_form">
 		<label for="name_input">Ім'я: </label>
