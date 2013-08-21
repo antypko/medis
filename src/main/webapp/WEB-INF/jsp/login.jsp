@@ -9,7 +9,7 @@
 <jsp:include page="fragments/headTag.jsp"/>
 <body>
 	<h1>Login</h1>
-	<form id="login" method="POST" action="<c:url value="/j_spring_security_check" />">
+	<form class="well" id="login" method="POST" action="<c:url value="/j_spring_security_check" />">
 		<p>
 			<label for="j_username">User name</label> 
 			<input id="j_username" name="j_username" type="text" />
@@ -18,7 +18,7 @@
 			<label for="j_password">Password</label> 
 			<input id="j_password" name="j_password" type="password" />
 		</p>
-		<input type="submit" value="Login" />
+		<input class="btn btn-info" type="submit" value="Login" />
 	</form>
 </body>
 

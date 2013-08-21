@@ -8,6 +8,6 @@ public interface PatientService {
 	
 	public Set<PatientDTO> searchByName(String name);
 	Set<PatientDTO> getAll();
-	void saveOrUpdate(PatientDTO patient);
+	PatientDTO saveOrUpdate(PatientDTO patient);
 	PatientDTO findById(Long id);
 }

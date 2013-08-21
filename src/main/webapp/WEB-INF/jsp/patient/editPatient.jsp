@@ -8,8 +8,8 @@
 <jsp:include page="../fragments/headTag.jsp"/>
 <body>
 <jsp:include page="../fragments/bodyHeader.jsp"/>
-	<h1>Сторінка редагування даних паціента</h1>
-	 <form id="edit_patient_form">
+	<h3>Сторінка редагування даних паціента</h3>
+	 <form class="well" id="edit_patient_form">
 	 	<input type="text" name="id" id="id_input" hidden="true" value="${patient.id}"/>
 	 	<label for="name_input">Ім'я: </label>
 		<input type="text" name="name" id="name_input" value="${patient.name}"/>
@@ -50,7 +50,7 @@
 			<option value="true">М</option>
 			<option value="false">Ж</option>
 		</select>
-      	<input type="submit" value="Save Patient" />
+      	<input class="btn btn-info" type="submit" value="Save Patient" />
 	 </form>
 </body>
 <script>

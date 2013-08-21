@@ -17,7 +17,10 @@ function searchByName() {
 
 function addNewPatient(e) {
 	$.post("addPatient", $(this).serialize(), 
-			function(response) { $("#patientFormResponse").text("Паціент " + response.name + " був доданий успішно!!!!");});
+			function(response) { 
+		document.location = "http://" + document.location.host + "/medis/editPatient/" + response.id;
+		/*$("#patientFormResponse").text("Паціент " + response.name + " був доданий успішно!!!!");*/
+		  });
 	e.preventDefault();	
 };
 
@@ -37,8 +40,8 @@ function fillTable(patients) {
 		var patient_birth_date = $("<td></td>").text(this.birthDate);
 		var patient_blood_type = $("<td></td>").text(this.bloodType);
 		var patient_telephone = $("<td></td>").text(this.telephone);
-		var patient_medicalCard_button = $("<td> <button type='button'>Добавити карточку!</button></td>");
-		var patient_edit_button = $("<td> <button type='button'>Редагувати дані</button></td>");
+		var patient_medicalCard_button = $("<td> <button class='btn btn-info' type='button'>Добавити карточку!</button></td>");
+		var patient_edit_button = $("<td> <button class='btn btn-info' type='button'>Редагувати дані</button></td>");
 		var patient_row = $("<tr class='patient_row'></tr>").append(patient_id, patient_name,
 				patient_surname, patient_gender, patient_birth_date,
 				patient_blood_type, patient_telephone, patient_medicalCard_button, patient_edit_button);
