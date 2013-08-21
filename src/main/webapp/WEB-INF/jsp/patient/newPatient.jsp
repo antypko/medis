@@ -7,9 +7,9 @@
 <jsp:include page="../fragments/headTag.jsp"/>
 <body>
 <jsp:include page="../fragments/bodyHeader.jsp"/>
-<h1>Сторінка з паціентами</h1>
-<a href="<c:url value="/j_spring_security_logout" />" > Logout</a>
-<h2>Зареєструвати нового паціента</h2>
+<h3>Сторінка з паціентами</h3>
+
+<div>Зареєструвати нового паціента</div>
     <form id="new_patient_form">
 		<label for="name_input">Ім'я: </label>
 		<input type="text" name="name" id="name_input" />
@@ -23,7 +23,7 @@
 			<option value="true">М</option>
 			<option value="false">Ж</option>
 		</select>
-      	<input type="submit" value="Save Patient" />
+      	<input class="btn btn-info" type="submit" value="Save Patient" />
       	
     </form>
 <div id="patientFormResponse">${newPatient.name}</div>

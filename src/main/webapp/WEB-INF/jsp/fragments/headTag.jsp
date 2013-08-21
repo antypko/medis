@@ -14,12 +14,15 @@
     <link href="${jQueryUiCss}" rel="stylesheet"></link>
     
     <spring:url value="/webjars/bootstrap/2.3.2/css/bootstrap.min.css" var="bootstrapCss"/>
-    <link href="${bootstrapCss}" rel="stylesheet"></link>
+    <link href="${bootstrapCss}" rel="stylesheet"></link> 
     
-    <spring:url value="/js/medicalCard.js" var="medicalCard"/>
-    <script src="${medicalCard}"></script>
+    <spring:url value="/js/medicalCard.js" var="medicalCardJs"/>
+    <script src="${medicalCardJs}"></script>
     
-    <spring:url value="/js/patient.js" var="patient"/>
-    <script src="${patient}"></script>
+    <spring:url value="/js/patient.js" var="patientJs"/>
+    <script src="${patientJs}"></script>
+    
+    <spring:url value="/css/bodyHeader.css" var="bodyHeaderCss"/>
+    <link href="${bodyHeaderCss}" rel="stylesheet"></link>
 
 </head>
