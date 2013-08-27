@@ -34,34 +34,14 @@ public class PdfView extends AbstractPdfView {
 		PdfContentByte pdfContentByte = writer.getDirectContent();
 		FileInputStream fileInputStream = new FileInputStream(servletContext.getRealPath("/pdf/1.pdf"));
 		PdfReader reader = new PdfReader(fileInputStream);
-		Paragraph p = new Paragraph();
-		int numberOfPages = reader.getNumberOfPages();
-/////////TODO: temporary measures, should be deleted in nearest future
-//////////////////////////////////////////////////////////////////////
-/*   */		String str = (String) model.get("some");
-/*   */		Integer x = (Integer) model.get("x");
-/*   */		Integer y = (Integer) model.get("y");
-//////////////////////////////////////////////////////////////////////
-/////////TODO: temporary measures, should be deleted in nearest future
-
-// don't delete it
-//		MedicalCardDTO medicalCardDTO = (MedicalCardDTO) model.get("medicalCard");
-//		PdfImportedPage page = writer.getImportedPage(reader, 1);
-//		doc.newPage();
-//		pdfContentByte.addTemplate(page, 0, 0);
-//		fillFirstPage (medicalCardDTO, pdfContentByte);
-
-		for (int i = 1; i <= numberOfPages; i++) {
-			PdfImportedPage page = writer.getImportedPage(reader, i);
+		MedicalCardDTO medicalCardDTO = (MedicalCardDTO) model.get("medicalCard");
+		PdfImportedPage page = writer.getImportedPage(reader, 1);
+		doc.newPage();
+		pdfContentByte.addTemplate(page, 0, 0);
+		fillFirstPage (medicalCardDTO, pdfContentByte);
+			page = writer.getImportedPage(reader, 2);
 			doc.newPage();
 			pdfContentByte.addTemplate(page, 0, 0);
-//			fillFirstPage (medicalCardDTO, pdfContentByte);
-			
-//TODO: temporary measures, should be deleted in nearest future
-			if( x != null && y != null)
-				pdfService.addText(str, pdfContentByte, 12, x, y);
-		}
-
 	}
 	
 	private void fillFirstPage (MedicalCardDTO medicalCardDTO, PdfContentByte pdfContentByte) {

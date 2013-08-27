@@ -46,17 +46,17 @@ public class MedicalCardListController {
 	
 	
 	//TODO: temporary method, should be deleted in nearest future
-	@RequestMapping(value = "{x}/{y}/getFile", method = RequestMethod.GET)
-	@ResponseBody
-	public ModelAndView getMedicalCardFile(HttpServletResponse response, @PathVariable int x, @PathVariable int y) 
-			throws IOException {
-		Map<String, Object> map =  new HashMap<>();
-		map.put("some", "5");
-		map.put("x", x);
-		map.put("y", y);
-		return new ModelAndView("pdf", map);
-	}
-
+//	@RequestMapping(value = "{x}/{y}/getFile", method = RequestMethod.GET)
+//	@ResponseBody
+//	public ModelAndView getMedicalCardFile(HttpServletResponse response, @PathVariable int x, @PathVariable int y) 
+//			throws IOException {
+//		Map<String, Object> map =  new HashMap<>();
+//		map.put("some", "5");
+//		map.put("x", x);
+//		map.put("y", y);
+//		return new ModelAndView("pdf", map);
+//	}
+//
 	@Autowired
 	public void setMedicalCardService(MedicalCardService medicalCardService) {
 		this.medicalCardService = medicalCardService;

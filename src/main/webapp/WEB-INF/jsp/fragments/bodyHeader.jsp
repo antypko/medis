@@ -16,7 +16,7 @@
 				<li><a href="<spring:url value="/home" htmlEscape="true" />">На головну сторінку</a></li>
 				<li><a href="<spring:url value="/patientsList" htmlEscape="true" />">Паціенти</a></li>
 				<li><a href="<spring:url value="/medicalCard" htmlEscape="true" />">Картки</a></li>
-				<li><a href="<spring:url value="/j_spring_security_logout" htmlEscape="true"/>" > Logout</a></li>
+				<li><a href="<spring:url value="/j_spring_security_logout" htmlEscape="true"/>" >Вилогуватись</a></li>
 			</ul>
 		</div>
 	</div>

@@ -13,8 +13,11 @@
     <spring:url value="/webjars/jquery-ui/1.9.2/css/smoothness/jquery-ui-1.9.2.custom.css" var="jQueryUiCss"/>
     <link href="${jQueryUiCss}" rel="stylesheet"></link>
     
-    <spring:url value="/webjars/bootstrap/2.3.2/css/bootstrap.min.css" var="bootstrapCss"/>
+    <spring:url value="/webjars/bootstrap/2.3.2/css/bootstrap.css" var="bootstrapCss"/>
     <link href="${bootstrapCss}" rel="stylesheet"></link> 
+    
+    <spring:url value="/webjars/bootstrap/2.3.2/js/bootstrap.js" var="bootstrapJs"/>
+    <link href="${bootstrapJs}" rel="stylesheet"></link> 
     
     <spring:url value="/js/medicalCard.js" var="medicalCardJs"/>
     <script src="${medicalCardJs}"></script>
@@ -22,7 +25,7 @@
     <spring:url value="/js/patient.js" var="patientJs"/>
     <script src="${patientJs}"></script>
     
-    <spring:url value="/css/bodyHeader.css" var="bodyHeaderCss"/>
-    <link href="${bodyHeaderCss}" rel="stylesheet"></link>
+    <spring:url value="/css/main.css" var="mainCss"/>
+    <link href="${mainCss}" rel="stylesheet"></link>
 
 </head>
