@@ -28,7 +28,7 @@ public class PatientServiceImpl implements PatientService {
 
 	@Override
 	public Set<PatientDTO> searchByName(String name) {
-		return patientTransformer.toDTO(patientDAO.searchByName(name));
+		return patientTransformer.toDTO(patientDAO.searchPatient(name));
 	}
 
 	@Override

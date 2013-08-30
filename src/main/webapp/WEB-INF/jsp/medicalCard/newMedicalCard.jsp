@@ -15,7 +15,7 @@
 	 	<label for="patientName_input">Ім'я паціента: </label>
 	 	<input type="text" name="patient.name" id="patient.name" readonly="readonly" value="${patient.name}"/>
 	 	<label for="clinicName_input">Назва клініки: </label>
-		<input type="text" name="clinicName" id="clinicName_input" />
+		<input type="text" name="clinicName" id="clinicName_input" required/>
  		<label for="hospitalized_in_planned_order">Госпіталізований в плановому порядку: </label>
 		<select id="hospitalized_in_planned_order" name="hospitalizedInPlannedOrder">
 			<option value="true">ТАК</option>

@@ -10,13 +10,13 @@
 <jsp:include page="../fragments/bodyHeader.jsp"/>
 	<h3>Сторінка редагування даних паціента</h3>
 	 <form class="well" id="edit_patient_form">
-	 	<input type="text" name="id" id="id_input" hidden="true" value="${patient.id}"/>
+	 	<input type="text" name="id" id="id_input" hidden="true" readonly="readonly" value="${patient.id}"/>
 	 	<label for="name_input">Ім'я: </label>
-		<input type="text" name="name" id="name_input" value="${patient.name}"/>
+		<input type="text" name="name" id="name_input" value="${patient.name}" />
 		<label for="surname_input">Прізвище: </label>
-		<input type="text" name="surname" id="surname_input"  value="${patient.surname}"/>
+		<input type="text" name="surname" id="surname_input" value="${patient.surname}" />
 		<label for="fathersName_input">По-батькові: </label>
-		<input type="text" name="fathersName" id="fatherName_input" value="${patient.fathersName}"/>
+		<input type="text" name="fathersName" id="fatherName_input" value="${patient.fathersName}" />
 		<label for="birthDate_input">Дата народження: </label>
 		<input type="text" name="birthDate" id="birthDate_input" value="${patient.birthDate}"/>
 		<label for="blood_type_input">Група крові: </label>
@@ -30,8 +30,6 @@
 			<option value="ABp">ABp</option>
 			<option value="ABn">Abn</option>
 		</select> 
-		<%-- <label for="birth_date_input">Дата народження: </label>
-		<input type="text" name="birthDate" id="birth_date_input" value="${patient.birthDate}"/> --%>
 		<label for="telephone_input">Телефонний номер: </label>
 		<input type="text" name="telephone" id="telephone_input" value="${patient.telephone}"/>
 		<label for="work_adress_input">Місце роботи: </label>
@@ -51,6 +49,7 @@
 			<option value="false">Ж</option>
 		</select>
       	<input class="btn btn-info" type="submit" value="Save Patient" />
+      	<div class="alert alert-error" id="warn_message" style="display: none;"></div>
 	 </form>
 </body>
 <script>

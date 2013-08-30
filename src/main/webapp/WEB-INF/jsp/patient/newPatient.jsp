@@ -11,7 +11,7 @@
 <div>Зареєструвати нового паціента</div>
     <form class="well" id="new_patient_form">
 		<label for="name_input">Ім'я: </label>
-		<input type="text" name="name" id="name_input" />
+		<input type="text" name="name" id="name_input"  />
 		<label for="surname_input">Прізвище: </label>
 		<input type="text" name="surname" id="surname_input" />
 		<label for="fathersName_input">По-батькові: </label>
@@ -24,7 +24,7 @@
 			<option value="false">Ж</option>
 		</select>
       	<input class="btn btn-info" type="submit" value="Save Patient" />
-      	
+      	<div class="alert alert-error" id="warn_message" style="display: none;"></div>
     </form>
 <div id="patientFormResponse">${newPatient.name}</div>
 </body>

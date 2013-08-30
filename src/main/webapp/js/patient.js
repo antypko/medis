@@ -16,17 +16,20 @@ function searchByName() {
 };
 
 function addNewPatient(e) {
-	$.post("addPatient", $(this).serialize(), 
-			function(response) { 
-		document.location = "http://" + document.location.host + "/medis/editPatient/" + response.id;
-		/*$("#patientFormResponse").text("Паціент " + response.name + " був доданий успішно!!!!");*/
-		  });
-	e.preventDefault();	
+	if(validateForm()) {
+		$.post("addPatient", $(this).serialize(), 
+				function(response) { 
+			document.location = "http://" + document.location.host + "/medis/editPatient/" + response.id;
+			  });
+		e.preventDefault();	
+	} else return false;
 };
 
 function editPatient(e) {
-	$.post("update", $(this).serialize(), function(data){});
-	e.preventDefault();	
+	if(validateForm()) {
+		$.post("update", $(this).serialize(), function(data){});
+		e.preventDefault();	
+	} else return false;
 };
 
 function fillTable(patients) {
@@ -54,5 +57,21 @@ function fillTable(patients) {
 		});
 		$("#patients_table tbody").append(patient_row);
 	});
+};
+
+function validateForm(){
+	if (!$("#name_input").val() 
+			|| !$("#surname_input").val() 
+			|| !$("#fatherName_input").val() 
+			|| !$("#birthDate_input").val()) {
+		$("#warn_message").text("Введіть всі поля");
+		$("#warn_message").show();
+		return false;
+	}  else if(!$("#birthDate_input").val().match(/^\d{4}-((0\d)|(1[012]))-(([012]\d)|3[01])$/)) {
+		$("#warn_message").text("Введіть правильно дату народження");
+		$("#warn_message").show();
+		return false;
+	} else 
+		return true;
 };
 

@@ -46,7 +46,6 @@ public class PatientTransformer {
 		patient.setLiveAdress(patientDTO.getLiveAdress());
 		patient.setSpeciaAccounting(patientDTO.getSpecialAccounting());
 		patient.setHiv(patientDTO.getHiv());
-		System.out.println(patient);
 		return patient;
 	}
 	
