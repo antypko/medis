@@ -43,12 +43,10 @@ public class GenericDAOImpl<E, I extends Serializable> implements GenericDAO<E,I
     @SuppressWarnings("unchecked")
 	public List<E> findByCriteria(Criterion criterion) {
         Criteria criteria = getCurrentSession().createCriteria(entityClass);
-        if (criterion == null) { 
-        	return criteria.list();
-        } else {
+        if (criterion != null) { 
         	criteria.add(criterion);
-        	return criteria.list();
-        }
+        } 
+        return criteria.list();
     }
 
 	public List<E> getAll() {

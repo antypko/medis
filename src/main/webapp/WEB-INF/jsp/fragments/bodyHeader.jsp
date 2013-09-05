@@ -8,7 +8,6 @@
 	<a href="<spring:url value="/home" htmlEscape="true" />"> MedIS</a>
 </h1>
 
-
 <div class="navbar menu">
 	<div class="navbar-inner"> 
 		<div class="container">
@@ -16,6 +15,7 @@
 				<li><a href="<spring:url value="/home" htmlEscape="true" />">На головну сторінку</a></li>
 				<li><a href="<spring:url value="/patientsList" htmlEscape="true" />">Паціенти</a></li>
 				<li><a href="<spring:url value="/medicalCard" htmlEscape="true" />">Картки</a></li>
+				<li><a href="<spring:url value="/doctorsList" htmlEscape="true" />">Дохтори</a></li>
 				<li><a href="<spring:url value="/j_spring_security_logout" htmlEscape="true"/>" >Вилогуватись</a></li>
 			</ul>
 		</div>

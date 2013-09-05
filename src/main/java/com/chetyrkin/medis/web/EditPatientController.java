@@ -17,7 +17,8 @@ public class EditPatientController {
 	private PatientService patientService;
 
 	@RequestMapping(value = "/{id}", method = RequestMethod.GET)
-	public String getEditPatient(@PathVariable final Long id, ModelMap modelMap, PatientDTO patientDTO) {
+	public String getEditPatient(@PathVariable final Long id, ModelMap modelMap){
+			//, PatientDTO patientDTO) {
 		PatientDTO patinentDTO = patientService.findById(id);
 		modelMap.addAttribute("patient", patinentDTO);
 		return "patient/editPatient";

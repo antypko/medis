@@ -25,6 +25,9 @@
     <spring:url value="/js/patient.js" var="patientJs"/>
     <script src="${patientJs}"></script>
     
+    <spring:url value="/js/doctor.js" var="doctorJs"/>
+    <script src="${doctorJs}"></script>
+    
     <spring:url value="/css/main.css" var="mainCss"/>
     <link href="${mainCss}" rel="stylesheet"></link>
 

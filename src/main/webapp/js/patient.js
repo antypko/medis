@@ -1,6 +1,6 @@
 function showPatients() {
 	$.get("patientsList/getPatients", function(data) {
-		fillTable(data);
+		fillPatientsTable(data);
 	});
 };
 
@@ -10,13 +10,13 @@ function searchByName() {
 		return true;
 	} else {
 		$.get("patientsList/searchByName/", {'name' : name}, function(data) {
-			fillTable(data);
+			fillPatientsTable(data);
 		});
 	}
 };
 
 function addNewPatient(e) {
-	if(validateForm()) {
+	if(validateFormvalidatePatientForm()) {
 		$.post("addPatient", $(this).serialize(), 
 				function(response) { 
 			document.location = "http://" + document.location.host + "/medis/editPatient/" + response.id;
@@ -26,13 +26,13 @@ function addNewPatient(e) {
 };
 
 function editPatient(e) {
-	if(validateForm()) {
+	if(validatePatientForm()) {
 		$.post("update", $(this).serialize(), function(data){});
 		e.preventDefault();	
 	} else return false;
 };
 
-function fillTable(patients) {
+function fillPatientsTable(patients) {
 	$("#patients_table tbody").empty();
 	$.each(patients, function() {
 		var varId = this.id;
@@ -59,7 +59,7 @@ function fillTable(patients) {
 	});
 };
 
-function validateForm(){
+function validatePatientForm(){
 	if (!$("#name_input").val() 
 			|| !$("#surname_input").val() 
 			|| !$("#fatherName_input").val() 

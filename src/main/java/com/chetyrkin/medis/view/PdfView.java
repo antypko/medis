@@ -13,7 +13,6 @@ import org.springframework.web.servlet.view.document.AbstractPdfView;
 import com.chetyrkin.medis.dto.MedicalCardDTO;
 import com.chetyrkin.medis.service.PdfService;
 import com.lowagie.text.Document;
-import com.lowagie.text.Paragraph;
 import com.lowagie.text.pdf.PdfContentByte;
 import com.lowagie.text.pdf.PdfImportedPage;
 import com.lowagie.text.pdf.PdfReader;
