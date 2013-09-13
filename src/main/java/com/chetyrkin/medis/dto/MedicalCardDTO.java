@@ -2,6 +2,7 @@ package com.chetyrkin.medis.dto;
 
 import java.sql.Timestamp;
 
+import com.chetyrkin.medis.domain.Doctor;
 import com.chetyrkin.medis.domain.Patient;
 
 public class MedicalCardDTO {
@@ -9,6 +10,8 @@ public class MedicalCardDTO {
 	private Long id;
 
 	private Patient patient;
+	
+	private Doctor doctor;
 
 	private Timestamp date;
 
@@ -96,6 +99,14 @@ public class MedicalCardDTO {
 		this.clinicalDiagnosis = clinicalDiagnosis;
 	}
 
+	public Doctor getDoctor() {
+		return doctor;
+	}
+
+	public void setDoctor(Doctor doctor) {
+		this.doctor = doctor;
+	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -103,6 +114,7 @@ public class MedicalCardDTO {
 		result = prime * result + ((clinicName == null) ? 0 : clinicName.hashCode());
 		result = prime * result + ((clinicalDiagnosis == null) ? 0 : clinicalDiagnosis.hashCode());
 		result = prime * result + ((date == null) ? 0 : date.hashCode());
+		result = prime * result + ((doctor == null) ? 0 : doctor.hashCode());
 		result = prime * result + ((facilityDiagnosis == null) ? 0 : facilityDiagnosis.hashCode());
 		result = prime * result + ((hospitalizationDiagnosis == null) ? 0 : hospitalizationDiagnosis.hashCode());
 		result = prime * result + ((hospitalizedInPlannedOrder == null) ? 0 : hospitalizedInPlannedOrder.hashCode());
@@ -135,6 +147,11 @@ public class MedicalCardDTO {
 			if (other.date != null)
 				return false;
 		} else if (!date.equals(other.date))
+			return false;
+		if (doctor == null) {
+			if (other.doctor != null)
+				return false;
+		} else if (!doctor.equals(other.doctor))
 			return false;
 		if (facilityDiagnosis == null) {
 			if (other.facilityDiagnosis != null)
@@ -171,8 +188,12 @@ public class MedicalCardDTO {
 
 	@Override
 	public String toString() {
-		return "MedicalCardDTO [id=" + id + ", patient=" + patient + ", date=" + date + ", clinicName=" + clinicName + ", hoursAfterAccident="
-				+ hoursAfterAccident + ", hospitalizedInPlannedOrder=" + hospitalizedInPlannedOrder + ", hospitalizationDiagnosis=" + hospitalizationDiagnosis
-				+ ", facilityDiagnosis=" + facilityDiagnosis + ", clinicalDiagnosis=" + clinicalDiagnosis + "]";
+		return "MedicalCardDTO [id=" + id + ", patient=" + patient + ", doctor=" + doctor + ", date=" + date
+				+ ", clinicName=" + clinicName + ", hoursAfterAccident=" + hoursAfterAccident
+				+ ", hospitalizedInPlannedOrder=" + hospitalizedInPlannedOrder + ", hospitalizationDiagnosis="
+				+ hospitalizationDiagnosis + ", facilityDiagnosis=" + facilityDiagnosis + ", clinicalDiagnosis="
+				+ clinicalDiagnosis + "]";
 	}
+
+	
 }

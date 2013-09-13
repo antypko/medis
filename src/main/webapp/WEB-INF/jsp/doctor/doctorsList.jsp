@@ -31,6 +31,6 @@
 	</table>
 </body>
 <script>
-	$("#get_Doctors").click(showDoctors);
+	$("#get_Doctors").click(function() {showDoctors(fillTableForDoctorsPage);});
 </script>
 </html>

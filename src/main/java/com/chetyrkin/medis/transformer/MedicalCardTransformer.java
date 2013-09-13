@@ -33,6 +33,7 @@ public class MedicalCardTransformer {
 		MedicalCard medicalCard = new MedicalCard();
 		medicalCard.setId(medicalCardDTO.getId());
 		medicalCard.setPatient(medicalCardDTO.getPatient());
+		medicalCard.setDoctor(medicalCardDTO.getDoctor());
 		medicalCard.setDate(medicalCardDTO.getDate());
 		medicalCard.setClinicName(medicalCardDTO.getClinicName());
 		medicalCard.setHoursAfterAccident(medicalCardDTO.getHoursAfterAccident());
